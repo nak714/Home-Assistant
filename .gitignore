@@ -1,0 +1,6 @@
+*.db
+*.log
+.conf
+secrets.yaml
+known.devices.yaml
+OZW_log.txt
