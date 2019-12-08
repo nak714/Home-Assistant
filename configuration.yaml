@@ -4,8 +4,17 @@ default_config:
 
 mobile_app:
 
+discovery:
+
 lovelace:
   mode: yaml
+  
+  
+                    #################################################
+                    #                                               #
+                    #               Weather Config                  #
+                    #                                               #
+                    #################################################
 
 weather:
   platform: darksky
@@ -14,7 +23,28 @@ weather:
   longitude: -104.7531521000905
   name: Foxfield CO
 
-discovery:
+                    #################################################
+                    #                                               #
+                    #               Scene Config                    #
+                    #                                               #
+                    #################################################
+                    
+
+scene:
+  - name: Movie Time On
+    entities:
+      light.man_cave: off
+      light.dining: off
+      light.upstairs: off
+      light.tv: 
+        state: on
+      
+  - name: Movie Time Off
+    entities:
+      light.man_cave: on
+      light.dining: on
+      
+
 
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
@@ -49,7 +79,6 @@ lifx:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-scene: !include scene.yaml
 homeassistant:
   customize: !include customize.yaml
   

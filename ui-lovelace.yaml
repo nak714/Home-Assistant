@@ -67,9 +67,32 @@ views:
     path: default_view
     title: Home
   - badges: []
-    cards: []
-    path: sensors
-    title: Sensors
+    cards:
+      - type: horizontal-stack
+        cards:
+        - type: entity-button
+          entity: scene.movie_time_on
+          name: Move Time On
+          icon: 'mdi:television'
+          icon_height: 45px
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.movie_time_on
+        - type: entity-button
+          entity: scene.movie_time_on
+          name: Move Time Off
+          icon: 'mdi:television'
+          icon_height: 45px
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+                  entity_id: scene.movie_time_off
+    icon: 'mdi:television'
+    path: scenes
+    title: Scenes
   - badges: []
     cards:
       - entities:
@@ -99,14 +122,37 @@ views:
     title: Laundry
   - badges: []
     cards:
-      - entities:
-          - entity: light.downstairs
-          - entity: light.upstairs
-          - entity: light.stairway
-        show_header_toggle: false  
-        title: Hue Groups
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: light.downstairs
+            name: Downstairs
+            show_state: true
+            icon_height: 30px
+            tap action:
+              action: call-service
+              service:
+                entity_id: light.downstairs
+          - type: entity-button
+            entity: light.upstairs
+            name: Upstairs
+            show_state: true
+            icon_height: 30px
+            tap action:
+              action: call-service
+              service:
+                entity_id: light.upstairs
+          - type: entity-button
+            entity: light.stairway
+            name: Stairway
+            show_state: true
+            icon_height: 30px
+            tap action:
+              action: call-service
+              service:
+                entity_id: light.stairway
+        title: Hue Group
         icon: 'mdi:ceiling-light'
-        type: entities
       - entities:
           - entity: light.sengled_z01_cia19nae26_4c9a0503_level_on_off
           - entity: light.sengled_z01_cia19nae26_ceb60503_level_on_off

@@ -20,7 +20,7 @@
   description: ''
   trigger:
   - entity_id: binary_sensor.philips_sml001_96c4b704_occupancy
-    for: 00:02:30
+    for: 00:10:00
     platform: state
     to: 'off'
   condition: []
