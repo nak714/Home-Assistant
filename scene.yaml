@@ -1,0 +1,17 @@
+
+  - name: Laundry
+    entities:
+      light.sengled_z01_cia19nae26_42040403_level_on_off:
+        state: on
+        brightness_pct: 50
+      light.sengled_z01_cia19nae26_dca60503_level_on_off:
+        state: on
+        bigthness_pct: 50
+  - name: Hallway
+    entities:
+      light.sengled_z01_cia19nae26_4c9a0503_level_on_off:
+        state: on
+        brightness_pct: 50
+      light.sengled_z01_cia19nae26_ceb60503_level_on_off:
+        state: on
+        brightness_pct: 50
