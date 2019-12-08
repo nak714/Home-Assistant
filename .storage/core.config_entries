@@ -1,0 +1,117 @@
+{
+    "data": {
+        "entries": [
+            {
+                "connection_class": "cloud_poll",
+                "data": {
+                    "track_home": true
+                },
+                "domain": "met",
+                "entry_id": "3d9afba849174220a7ccad9424f368c1",
+                "options": {},
+                "source": "onboarding",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "Home",
+                "version": 1
+            },
+            {
+                "connection_class": "local_poll",
+                "data": {
+                    "bridge_id": "001788FFFEA4B9A5",
+                    "host": "10.0.1.8",
+                    "username": "dbTD8ifarPqwNi1DWnQkbMbW8EcsPZymaPulsWrl"
+                },
+                "domain": "hue",
+                "entry_id": "90ebaa78c4644d3d9f8c21de77151bca",
+                "options": {},
+                "source": "homekit",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "Philips hue",
+                "version": 1
+            },
+            {
+                "connection_class": "local_poll",
+                "data": {},
+                "domain": "lifx",
+                "entry_id": "8d57112ee32143e78e545f136e716425",
+                "options": {},
+                "source": "import",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "LIFX",
+                "version": 1
+            },
+            {
+                "connection_class": "cloud_push",
+                "data": {
+                    "app_data": {
+                        "push_token": "d1r1Z77MkS4:APA91bHNJtg4_jwLwRgDnk5Moqr5FjwvlNdQaaEuUNPxbuiAYXcaAnRxKZvtHoIQOl-Q2ov7BdVZiVWbCYhlpbVrYaPrXn17TkmhbjoOfDxNfrbr6w30LHtDwMXUC9cfyUUpRsPK3N_f",
+                        "push_url": "https://mobile-apps.home-assistant.io/api/sendPushNotification"
+                    },
+                    "app_id": "io.robbie.HomeAssistant",
+                    "app_name": "Home Assistant",
+                    "app_version": "2.0.0 (69)",
+                    "cloudhook_url": "https://hooks.nabu.casa/gAAAAABd6H7pRbqXjEHzXp725VHE1itc8wJVeA0X8eaW9q3pzAQsE_gMUVHcXbNAV3mHrwb_gbKpyKGls0vg4LtICAG0FzEdCMqp1nN326_J0vb3Z6ECh-8nPIIgRWNik1t60kFAUzStW0I272gpy3urSRfqw__P1sLXcZeKNZ77xNwFM3qUnVE=",
+                    "device_id": "46505dc3e44f4420a950c75499f487af",
+                    "device_name": "JC's iPhone",
+                    "manufacturer": "Apple",
+                    "model": "iPhone Xs",
+                    "os_name": "iOS",
+                    "os_version": "13.2.3",
+                    "secret": "4b3468684cf8981a1b0af853ca6a143668fc1bcded7c6f755d519c6d04a8de98",
+                    "supports_encryption": true,
+                    "user_id": "ff2822a8b5e04ba89598193e3b31c195",
+                    "webhook_id": "4c5c870e695213eba8d56517d6265c93eb1faeaf07a30b08e0a7854cc6f18e74"
+                },
+                "domain": "mobile_app",
+                "entry_id": "955d034bd078401cbbbc8d5189cc4b55",
+                "options": {},
+                "source": "registration",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "JC's iPhone",
+                "version": 1
+            },
+            {
+                "connection_class": "local_push",
+                "data": {
+                    "radio_type": "ezsp",
+                    "usb_path": "/dev/ttyUSB1"
+                },
+                "domain": "zha",
+                "entry_id": "ce881c2a6b234c7a98ed900914b38281",
+                "options": {},
+                "source": "import",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "/dev/ttyUSB1",
+                "version": 1
+            },
+            {
+                "connection_class": "local_push",
+                "data": {
+                    "network_key": null,
+                    "usb_path": "/dev/ttyUSB0"
+                },
+                "domain": "zwave",
+                "entry_id": "d24af01ecca64615aa9508c35a01adb4",
+                "options": {},
+                "source": "import",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "Z-Wave (import from configuration.yaml)",
+                "version": 1
+            }
+        ]
+    },
+    "key": "core.config_entries",
+    "version": 1
+}

@@ -1,0 +1,56 @@
+
+tile_13a02eb1a8be41ab:
+  hide_if_away: false
+  icon: mdi:view-grid
+  mac:
+  name: tile 13a02eb1a8be41ab
+  picture:
+  track: true
+
+tile_6d059650aa707f9e:
+  hide_if_away: false
+  icon: mdi:view-grid
+  mac:
+  name: tile 6d059650aa707f9e
+  picture:
+  track: true
+
+tile_7cd765bfcd2ca8b5:
+  hide_if_away: false
+  icon: mdi:view-grid
+  mac:
+  name: tile 7cd765bfcd2ca8b5
+  picture:
+  track: true
+
+tile_9de892959b1a43cd:
+  hide_if_away: false
+  icon: mdi:view-grid
+  mac:
+  name: tile 9de892959b1a43cd
+  picture:
+  track: true
+
+tile_e28d34f023d994b0:
+  hide_if_away: false
+  icon: mdi:view-grid
+  mac:
+  name: tile e28d34f023d994b0
+  picture:
+  track: true
+
+tile_p_5f84634d2efd350290e958c503b74b9c:
+  hide_if_away: false
+  icon: mdi:view-grid
+  mac:
+  name: tile p 5f84634d2efd350290e958c503b74b9c
+  picture:
+  track: true
+
+tile_p_ca9e65201170441e3f61a47331fa55b6:
+  hide_if_away: false
+  icon: mdi:view-grid
+  mac:
+  name: tile p ca9e65201170441e3f61a47331fa55b6
+  picture:
+  track: true

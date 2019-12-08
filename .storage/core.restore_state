@@ -1,0 +1,516 @@
+{
+    "data": [
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "entity_picture": "/local/pics/people/kim.jpg",
+                    "friendly_name": "Kim",
+                    "gps_accuracy": 0,
+                    "id": "e70f5ba719624cc3a4afecf332755baf",
+                    "latitude": 39.596160888671875,
+                    "longitude": -104.75314652556996,
+                    "source": "device_tracker.tile_p_ca9e65201170441e3f61a47331fa55b6"
+                },
+                "context": {
+                    "id": "7f33c52a79f84c42801bf821f50835c2",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.kim",
+                "last_changed": "2019-12-07T02:06:10.472043+00:00",
+                "last_updated": "2019-12-07T06:06:03.455178+00:00",
+                "state": "home"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "entity_picture": "/local/pics/people/JC.jpg",
+                    "friendly_name": "John",
+                    "gps_accuracy": 65,
+                    "id": "5afeac34e59d4830907486020e43d175",
+                    "latitude": 39.596435546875,
+                    "longitude": -104.7531427324366,
+                    "source": "device_tracker.jc_s_iphone",
+                    "user_id": "ff2822a8b5e04ba89598193e3b31c195"
+                },
+                "context": {
+                    "id": "f83454d735a947c89c7f5a3e84460f30",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.john",
+                "last_changed": "2019-12-07T01:12:51.094882+00:00",
+                "last_updated": "2019-12-07T06:20:56.327629+00:00",
+                "state": "home"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "altitude": 1772,
+                    "battery_level": 21,
+                    "entity_picture": "/local/pics/people/JC.jpg",
+                    "friendly_name": "John",
+                    "gps_accuracy": 65,
+                    "latitude": 39.596435546875,
+                    "longitude": -104.7531427324366,
+                    "source_type": "gps",
+                    "vertical_accuracy": 10
+                },
+                "context": {
+                    "id": "b7031a9a4efc4be99cfcca5a4da6454a",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.jc_s_iphone",
+                "last_changed": "2019-12-07T01:12:51.085434+00:00",
+                "last_updated": "2019-12-07T06:20:56.324367+00:00",
+                "state": "home"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "device_class": "motion",
+                    "editable": true,
+                    "friendly_name": "Laundry Motion Sensor",
+                    "sensativity": 1,
+                    "sensativity_max": 2
+                },
+                "context": {
+                    "id": "bb755191ddb24cecbef9fc6f45adc2d0",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "binary_sensor.philips_sml001_96c4b704_occupancy",
+                "last_changed": "2019-12-07T02:17:40.195070+00:00",
+                "last_updated": "2019-12-07T02:17:40.195070+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "device_class": "opening",
+                    "friendly_name": "Philips SML001 96c4b704 on_off"
+                },
+                "context": {
+                    "id": "0f5c0d9a3d924bf68acaacc5b511e4a8",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "binary_sensor.philips_sml001_96c4b704_on_off",
+                "last_changed": "2019-12-06T20:17:23.379171+00:00",
+                "last_updated": "2019-12-06T20:17:23.379171+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "device_class": "power",
+                    "friendly_name": "sengled Z01-CIA19NAE26 ceb60503 smartenergy_metering",
+                    "unit_of_measurement": "kW"
+                },
+                "context": {
+                    "id": "ae3afd546a6a4b849477848737017c69",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "sensor.sengled_z01_cia19nae26_ceb60503_smartenergy_metering",
+                "last_changed": "2019-12-06T20:21:50.644754+00:00",
+                "last_updated": "2019-12-06T20:21:50.644754+00:00",
+                "state": "0000.0"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "device_class": "power",
+                    "friendly_name": "sengled Z01-CIA19NAE26 4c9a0503 smartenergy_metering",
+                    "unit_of_measurement": "kW"
+                },
+                "context": {
+                    "id": "593ecb5a7d324f548f40cbcf3a1c2a6c",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "sensor.sengled_z01_cia19nae26_4c9a0503_smartenergy_metering",
+                "last_changed": "2019-12-06T20:22:20.844814+00:00",
+                "last_updated": "2019-12-06T20:22:20.844814+00:00",
+                "state": "0000.0"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "device_class": "power",
+                    "editable": true,
+                    "friendly_name": "L2 Power Sensor",
+                    "unit_of_measurement": "kW"
+                },
+                "context": {
+                    "id": "08992a4d5f874134b96141941362eac3",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "sensor.sengled_z01_cia19nae26_dca60503_smartenergy_metering",
+                "last_changed": "2019-12-06T20:20:20.934758+00:00",
+                "last_updated": "2019-12-06T20:20:20.934758+00:00",
+                "state": "0000.0"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "device_class": "battery",
+                    "friendly_name": "Laundry Sensor Battery ",
+                    "unit_of_measurement": "%"
+                },
+                "context": {
+                    "id": "844f6f27cafe405385cebe82f0031b6c",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "sensor.philips_sml001_96c4b704_power",
+                "last_changed": "2019-12-06T20:17:23.382791+00:00",
+                "last_updated": "2019-12-06T20:17:23.382791+00:00",
+                "state": "100"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "device_class": "illuminance",
+                    "friendly_name": "Laundry Luminance Sensor",
+                    "unit_of_measurement": "lx"
+                },
+                "context": {
+                    "id": "a5e42394682e48f3a43dd7a83086e180",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "sensor.philips_sml001_96c4b704_illuminan",
+                "last_changed": "2019-12-07T06:37:15.499021+00:00",
+                "last_updated": "2019-12-07T06:37:15.499021+00:00",
+                "state": "1.0"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "device_class": "temperature",
+                    "editable": true,
+                    "friendly_name": "Laundry Temprature Sensor",
+                    "unit_of_measurement": "\u00b0F"
+                },
+                "context": {
+                    "id": "8e03b79e4cf549e6b0fedd949186840e",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "sensor.philips_sml001_96c4b704_temperature",
+                "last_changed": "2019-12-07T06:48:24.500151+00:00",
+                "last_updated": "2019-12-07T06:48:24.500151+00:00",
+                "state": "67.3"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "device_class": "power",
+                    "editable": true,
+                    "friendly_name": "L1 Power Sensor",
+                    "unit_of_measurement": "kW"
+                },
+                "context": {
+                    "id": "a3881d75c4434852b03c65aa4b4504e6",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "sensor.sengled_z01_cia19nae26_42040403_smartenergy_metering",
+                "last_changed": "2019-12-06T20:20:23.955497+00:00",
+                "last_updated": "2019-12-06T20:20:23.955497+00:00",
+                "state": "0000.0"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "Hallway 1",
+                    "off_brightness": null,
+                    "scene.Hallway": null,
+                    "supported_features": 33
+                },
+                "context": {
+                    "id": "c47f76fa98d1472c9fd3666d3a4cbc18",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "light.sengled_z01_cia19nae26_4c9a0503_level_on_off",
+                "last_changed": "2019-12-06T20:17:23.480165+00:00",
+                "last_updated": "2019-12-06T20:17:23.480165+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "Hallway 2",
+                    "off_brightness": null,
+                    "scene.Hallway": null,
+                    "supported_features": 33
+                },
+                "context": {
+                    "id": "3e25d099f7974fdf98fa39aba370a32e",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "light.sengled_z01_cia19nae26_ceb60503_level_on_off",
+                "last_changed": "2019-12-06T20:17:23.503774+00:00",
+                "last_updated": "2019-12-06T20:17:23.503774+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Laundry 2",
+                    "off_brightness": null,
+                    "supported_features": 33
+                },
+                "context": {
+                    "id": "3b586704078d4fda8caf7f9c7403e8de",
+                    "parent_id": "bb755191ddb24cecbef9fc6f45adc2d0",
+                    "user_id": null
+                },
+                "entity_id": "light.sengled_z01_cia19nae26_dca60503_level_on_off",
+                "last_changed": "2019-12-07T02:20:11.072535+00:00",
+                "last_updated": "2019-12-07T02:20:11.072535+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Laundry 1",
+                    "off_brightness": null,
+                    "supported_features": 33
+                },
+                "context": {
+                    "id": "3b586704078d4fda8caf7f9c7403e8de",
+                    "parent_id": "bb755191ddb24cecbef9fc6f45adc2d0",
+                    "user_id": null
+                },
+                "entity_id": "light.sengled_z01_cia19nae26_42040403_level_on_off",
+                "last_changed": "2019-12-07T02:20:11.222969+00:00",
+                "last_updated": "2019-12-07T02:20:11.222969+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Laundry Lights Off",
+                    "id": "1575443252163",
+                    "last_triggered": "2019-12-07T02:20:11.229633+00:00"
+                },
+                "context": {
+                    "id": "397e43e5a1ed4f08a00d317ad716ef66",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.laundry_lights_off",
+                "last_changed": "2019-12-07T04:32:03.357132+00:00",
+                "last_updated": "2019-12-07T04:32:03.357132+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "LIFX Entertainment",
+                    "id": "1575477726057",
+                    "last_triggered": "2019-12-07T00:38:46.030325+00:00"
+                },
+                "context": {
+                    "id": "7306def30ea541e8821c5d5a439639fd",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.lifx_entertainment",
+                "last_changed": "2019-12-07T04:32:03.359573+00:00",
+                "last_updated": "2019-12-07T04:32:03.359573+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-12-07T07:18:06.003599+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Laundry Lights On",
+                    "id": "1575432903237",
+                    "last_triggered": "2019-12-07T02:17:30.361735+00:00"
+                },
+                "context": {
+                    "id": "a252ba3f796b4a8db46d2c89707213fb",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.laundry_lights_on",
+                "last_changed": "2019-12-07T04:32:03.361267+00:00",
+                "last_updated": "2019-12-07T04:32:03.361267+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-12-05T23:07:26.390911+00:00",
+            "state": {
+                "attributes": {
+                    "device_class": "illuminance",
+                    "friendly_name": "Philips SML001 96c4b704 illuminance",
+                    "unit_of_measurement": "lx"
+                },
+                "context": {
+                    "id": "5a144b7c752949ce949110b68e9c6187",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "sensor.philips_sml001_96c4b704_illuminance",
+                "last_changed": "2019-12-05T23:04:45.402077+00:00",
+                "last_updated": "2019-12-05T23:04:45.402077+00:00",
+                "state": "10.2"
+            }
+        },
+        {
+            "last_seen": "2019-12-05T03:49:48.351479+00:00",
+            "state": {
+                "attributes": {
+                    "altitude": 1773,
+                    "battery_level": 46,
+                    "friendly_name": "JC's iPhone",
+                    "gps_accuracy": 65,
+                    "latitude": 39.596291802591274,
+                    "longitude": -104.75303607982129,
+                    "source_type": "gps",
+                    "vertical_accuracy": 10
+                },
+                "context": {
+                    "id": "ed5566aaa1cd4c6b86bed28951440a74",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.jc_s_iphone_2",
+                "last_changed": "2019-12-05T03:46:54.390022+00:00",
+                "last_updated": "2019-12-05T03:46:54.390022+00:00",
+                "state": "home"
+            }
+        },
+        {
+            "last_seen": "2019-12-05T03:46:41.191194+00:00",
+            "state": {
+                "attributes": {
+                    "altitude": 1773,
+                    "battery_level": 31,
+                    "friendly_name": "JC's iPhone",
+                    "gps_accuracy": 65,
+                    "latitude": 39.59625244140625,
+                    "longitude": -104.75314092682432,
+                    "source_type": "gps",
+                    "vertical_accuracy": 10
+                },
+                "context": {
+                    "id": "80d65a75387044beab6b2541f416f1b6",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.jc_s_iphone_3",
+                "last_changed": "2019-12-05T03:36:08.280893+00:00",
+                "last_updated": "2019-12-05T03:45:38.237394+00:00",
+                "state": "home"
+            }
+        },
+        {
+            "last_seen": "2019-12-04T07:04:41.812744+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Laundry Motion",
+                    "id": "1575432903237",
+                    "last_triggered": "2019-12-04T07:02:36.506754+00:00"
+                },
+                "context": {
+                    "id": "c71102bf10cb4075928f98f34b6993ff",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.laundry_motion",
+                "last_changed": "2019-12-04T07:04:32.459033+00:00",
+                "last_updated": "2019-12-04T07:04:32.459033+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-12-04T04:15:25.743939+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Laundry On",
+                    "id": "1575432903237",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "d55c3553b4474e48994b23de98cd5842",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.laundry_on",
+                "last_changed": "2019-12-04T04:15:02.169972+00:00",
+                "last_updated": "2019-12-04T04:15:02.169972+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-12-04T07:07:57.963313+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Laundry Motion On",
+                    "id": "1575432903237",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "57ba81c5cb97436893975d9c3f3dac28",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.laundry_motion_on",
+                "last_changed": "2019-12-04T07:07:30.767464+00:00",
+                "last_updated": "2019-12-04T07:07:30.767464+00:00",
+                "state": "on"
+            }
+        }
+    ],
+    "key": "core.restore_state",
+    "version": 1
+}

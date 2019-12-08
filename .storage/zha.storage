@@ -1,0 +1,33 @@
+{
+    "data": {
+        "devices": [
+            {
+                "ieee": "b0:ce:18:14:03:05:b6:ce",
+                "last_seen": 1575663014.768832,
+                "name": "sengled Z01-CIA19NAE26"
+            },
+            {
+                "ieee": "b0:ce:18:14:03:05:9a:4c",
+                "last_seen": 1575663126.0614073,
+                "name": "sengled Z01-CIA19NAE26"
+            },
+            {
+                "ieee": "b0:ce:18:14:03:05:a6:dc",
+                "last_seen": 1575663303.8821511,
+                "name": "sengled Z01-CIA19NAE26"
+            },
+            {
+                "ieee": "b0:ce:18:14:03:04:04:42",
+                "last_seen": 1575663187.8951254,
+                "name": "sengled Z01-CIA19NAE26"
+            },
+            {
+                "ieee": "00:17:88:01:04:b7:c4:96",
+                "last_seen": 1575663206.6519341,
+                "name": "Philips SML001"
+            }
+        ]
+    },
+    "key": "zha.storage",
+    "version": 1
+}

@@ -1,0 +1,153 @@
+
+title: Home
+views:
+  - badges:
+    #   - entity: binary_sensor.updater
+    #   - entity: binary_sensor.motion_sensor_upstair_hall_east_motion
+    #   - entity: binary_sensor.motion_sensor_stairway_motion
+    #   - entity: binary_sensor.motion_sensor_upstair_hall_west_motion
+    #   - entity: binary_sensor.remote_ui
+      - entity: person.john
+      - entity: person.kim
+    #   - entity: device_tracker.tile_13a02eb1a8be41ab
+    #   - entity: device_tracker.tile_6d059650aa707f9e
+    #   - entity: device_tracker.tile_7cd765bfcd2ca8b5
+    #   - entity: device_tracker.tile_9de892959b1a43cd
+    #   - entity: device_tracker.tile_e28d34f023d994b0
+    #   - entity: device_tracker.tile_p_5f84634d2efd350290e958c503b74b9c
+    #   - entity: device_tracker.tile_p_ca9e65201170441e3f61a47331fa55b6
+      - entity: device_tracker.jc_s_iphone
+    #   - entity: sensor.ssid
+    #   - entity: sensor.sim_1
+    #   - entity: sensor.last_update_trigger
+    #   - entity: sensor.floors_descended
+    #   - entity: sensor.floors_ascended
+    #   - entity: sensor.steps
+    #   - entity: sensor.connection_type
+    #   - entity: sensor.average_active_pace
+    #   - entity: sensor.geocoded_location
+    #   - entity: sensor.distance
+    #   - entity: sensor.battery_level
+    #   - entity: sensor.bssid
+    #   - entity: sensor.activity
+    #   - entity: sensor.battery_state
+    #   - entity: sensor.motion_sensor_stairway_temperature
+    #   - entity: sensor.motion_sensor_upstair_hall_west_light_level
+    #   - entity: sensor.motion_sensor_upstair_hall_west_temperature
+    #   - entity: sensor.motion_sensor_upstair_hall_east_light_level
+    #   - entity: sensor.motion_sensor_stairway_light_level
+    #   - entity: sensor.motion_sensor_upstair_hall_east_temperature
+      - entity: sun.sun
+    cards:
+      - entities:
+          - automation.lifx_entertainment
+          - automation.laundry_lights_off
+          - automation.laundry_lights_on
+        title: Automation
+        type: entities
+      - entities:
+          - light.murano
+          - light.stairway_2
+          - light.office_1
+          - light.master_hall_1
+          - light.stairway_1
+          - light.stairway_3
+          - light.upstairs_hall_1
+          - light.upstairs_hall
+          - light.dining
+          - light.group_for_wakeup
+          - light.master_hall
+          - light.office
+          - light.tv
+        title: Light
+        type: entities
+      - entity:  weather.foxfield_co
+        type: weather-forecast
+    icon: 'mdi:home'
+    path: default_view
+    title: Home
+  - badges: []
+    cards: []
+    path: sensors
+    title: Sensors
+  - badges: []
+    cards:
+      - entities:
+          - light.sengled_z01_cia19nae26_42040403_level_on_off
+          - light.sengled_z01_cia19nae26_dca60503_level_on_off
+        show_header_toggle: true
+        title: Lights
+        type: entities
+      - entities:
+          - binary_sensor.philips_sml001_96c4b704_occupancy
+          - sensor.philips_sml001_96c4b704_illuminan
+          - sensor.philips_sml001_96c4b704_power
+          - sensor.philips_sml001_96c4b704_temperature
+          - sensor.sengled_z01_cia19nae26_42040403_smartenergy_metering
+          - sensor.sengled_z01_cia19nae26_dca60503_smartenergy_metering
+        show_header_toggle: false
+        title: Sensors
+        type: entities
+      - entities:
+          - automation.laundry_lights_off
+          - automation.laundry_lights_on
+        show_header_toggle: true
+        title: Automations
+        type: entities
+    icon: 'mdi:tumble-dryer'
+    path: laundry
+    title: Laundry
+  - badges: []
+    cards:
+      - entities:
+          - entity: light.downstairs
+          - entity: light.upstairs
+          - entity: light.stairway
+        show_header_toggle: false  
+        title: Hue Groups
+        icon: 'mdi:ceiling-light'
+        type: entities
+      - entities:
+          - entity: light.sengled_z01_cia19nae26_4c9a0503_level_on_off
+          - entity: light.sengled_z01_cia19nae26_ceb60503_level_on_off
+        title: Hallway
+        icon: 'mdi:ceiling-light'
+        type: entities
+      - entities:
+          - entity: light.k_1
+          - entity: light.k_2
+          - entity: light.k_3
+          - entity: light.k_4
+          - entity: light.k_5
+          - entity: light.k_6
+        title: Kitchen
+        icon: 'mdi:ceiling-light'
+        type: entities
+      - entities: 
+          - entity: light.stove_1
+          - entity: light.stove_2
+        title: Stove
+        icon: 'mdi:ceiling-light'
+        type: entities
+      - entities:
+          - entity: light.family_1
+          - entity: light.family_2
+        title: Family Room
+        icon: 'mdi:ceiling-light'
+        type: entities
+      - entities:
+          - light.man_cave_1
+          - light.man_cave_2
+          - light.tv
+        title: Man Cave
+        icon: 'mdi:ceiling-light'
+        type: entities
+      - entities:
+          - light.john_1
+          - light.john_2
+        title: John
+        icon: 'mdi:ceiling-light'
+        type: entities
+    icon: 'mdi:lightbulb-outline'
+    path: lights
+    title: Lights
