@@ -91,13 +91,8 @@ homeassistant:
     # - name: Kim
     #   id: e70f5ba719624cc3a4afecf332755baf
     #   device_trackers:
-    #     - device_tracker.tile_6d059650aa707f9e
+    #     - device_tracker.kimberly_cernacs_iphone
 
-
-device_tracker:
-- platform: tile
-  username: kcernac@live.com
-  password: Kim788377
   
 
 #################################################

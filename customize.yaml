@@ -48,6 +48,10 @@ sensor.sengled_z01_cia19nae26_dca60503_smartenergy_metering:
         #                                                      #
         ######################################################## 
 
+group.all_lights:
+  editable: true
+  friendly_name: All Lights
+  entity_picture: /local/pics/places/Havar.jpg
 light.laundry:
   editable: true
   friendly_name: Laundry

@@ -44,23 +44,7 @@ views:
           - automation.laundry_lights_off
           - automation.laundry_lights_on
         title: Automation
-        type: entities
-      - entities:
-          - light.murano
-          - light.stairway_2
-          - light.office_1
-          - light.master_hall_1
-          - light.stairway_1
-          - light.stairway_3
-          - light.upstairs_hall_1
-          - light.upstairs_hall
-          - light.dining
-          - light.group_for_wakeup
-          - light.master_hall
-          - light.office
-          - light.tv
-        title: Light
-        type: entities
+        type: entities     
       - entity:  weather.foxfield_co
         type: weather-forecast
     icon: 'mdi:home'
@@ -68,6 +52,8 @@ views:
     title: Home
   - badges: []
     cards:
+    - type: vertical-stack
+      cards:
       - type: horizontal-stack
         cards:
         - type: entity-button
@@ -89,7 +75,17 @@ views:
             action: call-service
             service: scene.turn_on
             service_data:
-                  entity_id: scene.movie_time_off
+              entity_id: scene.movie_time_off
+      - type: horizontal-stack
+        cards:
+        - type: entity-button
+          entity: light.tv
+          name: LIFX TV Backlight
+          icon_height: 60px
+          tap action:
+            action: call-service
+            service:
+              entity_id: light.tv
     icon: 'mdi:television'
     path: scenes
     title: Scenes
@@ -122,8 +118,15 @@ views:
     title: Laundry
   - badges: []
     cards:
-      - type: horizontal-stack
+      - type: vertical-stack
         cards:
+        - type: picture-entity
+          entity: group.all_lights
+          image: /local/pics/places/havar.jpg
+          tap_action:
+            action: none
+        - type: horizontal-stack
+          cards:
           - type: entity-button
             entity: light.downstairs
             name: Downstairs
@@ -151,6 +154,56 @@ views:
               action: call-service
               service:
                 entity_id: light.stairway
+        - type: horizontal-stack
+          cards:
+          - type: entity-button
+            entity: light.office
+            name: Office
+            show_state: true
+            icon_height: 30px
+            tap action:
+              action: call-service
+              service:
+                entity_id: light.office
+          - type: entity-button
+            entity: group.hallway
+            name: Hallway
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px
+            tap action:
+              action: call-service
+              service:
+                entity_id: group.hallway
+          - type: entity-button
+            entity: light.murano
+            name: Murano
+            show_state: true
+            icon_height: 30px
+            tap action:
+              action: call-service
+              service:
+                entity_id: light.murano
+        - type: horizontal-stack
+          cards:
+          - type: entity-button
+            entity: light.man_cave
+            name: Man Cave
+            show_state: true
+            icon_height: 30px
+            tap action:
+              action: call-service
+              service:
+                entity_id: light.man_cave
+          - type: entity-button
+            entity: light.john
+            name: John Night Stand
+            show_state: true
+            icon_height: 30px
+            tap action:
+              action: call-service
+              service:
+                entity_id: light.john
         title: Hue Group
         icon: 'mdi:ceiling-light'
       - entities:
