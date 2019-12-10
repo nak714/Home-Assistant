@@ -3,11 +3,6 @@ laundry:
   entities:
     - light.sengled_z01_cia19nae26_42040403_level_on_off
     - light.sengled_z01_cia19nae26_dca60503_level_on_off
-hallway:
-  name: Hallway
-  entities:
-    - light.sengled_z01_cia19nae26_4c9a0503_level_on_off
-    - light.sengled_z01_cia19nae26_ceb60503_level_on_off
 kitchen:
   name: Kitchen
   entities:
