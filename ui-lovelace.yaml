@@ -59,18 +59,13 @@ views:
             name: Upstairs
             show_state: true
             icon_height: 30px
-          - type: entity-button
-            entity: light.stairway
-            name: Stairway
-            show_state: true
-            icon_height: 30px
         - type: horizontal-stack
           cards:
           - type: entity-button
-            entity: light.office
-            name: Office
+            entity: light.man_cave
+            name: Man Cave
             show_state: true
-            icon: "mdi:desk-lamp"
+            icon: "mdi:lamp"
             icon_height: 30px
           - type: entity-button
             entity: light.hallway
@@ -87,11 +82,11 @@ views:
         - type: horizontal-stack
           cards:
           - type: entity-button
-            entity: light.man_cave
-            name: Man Cave
+            entity: light.stairway
+            name: Stairway
             show_state: true
-            icon: "mdi:lamp"
-            icon_height: 30px
+            icon: "mdi:ceiling-light"
+            icon_height: 30px     
           - type: entity-button
             entity: light.john
             name: John Bed Side
@@ -99,11 +94,11 @@ views:
             icon: 'mdi:lamp'
             icon_height: 30px
           - type: entity-button
-            entity: light.kitchen
-            name: Kitchen
+            entity: group.laundry
+            name: Laundry
             show_state: true
             icon: "mdi:ceiling-light"
-            icon_height: 30px
+            icon_height: 30px 
         - type: horizontal-stack
           cards:
           - type: entity-button
@@ -127,6 +122,12 @@ views:
         - type: horizontal-stack
           cards:
           - type: entity-button
+            entity: light.office
+            name: Office
+            show_state: true
+            icon: "mdi:desk-lamp"
+            icon_height: 30px     
+          - type: entity-button
             entity: light.kitchen
             name: Kitchen
             show_state: true
@@ -138,12 +139,6 @@ views:
             show_state: true
             icon: "mdi:ceiling-light"
             icon_height: 30px
-          - type: entity-button
-            entity: group.laundry
-            name: Laundry
-            show_state: true
-            icon: "mdi:ceiling-light"
-            icon_height: 30px 
       - entity:  weather.foxfield_co
         type: weather-forecast
       - type: 'custom:simple-thermostat'
