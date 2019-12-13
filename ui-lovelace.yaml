@@ -1,3 +1,8 @@
+resources:
+  - url: /local/simple-thermostat.js?v=1
+    type: module
+    
+background: var(--background-image)
 
 title: Home
 views:
@@ -9,7 +14,7 @@ views:
     #   - entity: binary_sensor.remote_ui
       - entity: person.john
       - entity: person.kim
-      - entity: device_tracker.jc_s_iphone
+    #  - entity: device_tracker.jc_s_iphone
     #   - entity: sensor.ssid
     #   - entity: sensor.sim_1
     #   - entity: sensor.last_update_trigger
@@ -38,7 +43,10 @@ views:
           entity: group.all_lights
           image: /local/pics/places/havar.jpg
           tap_action:
-            action: none
+            action: call-service
+            service: light.turn_off
+            service_data:
+                entity_id: group.all_lights
         - type: horizontal-stack
           cards:
           - type: entity-button
@@ -116,11 +124,38 @@ views:
             show_state: true
             icon: "mdi:lamp"
             icon_height: 30px
+        - type: horizontal-stack
+          cards:
+          - type: entity-button
+            entity: light.kitchen
+            name: Kitchen
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px
+          - type: entity-button
+            entity: light.stove
+            name: Stove
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px
+          - type: entity-button
+            entity: group.laundry
+            name: Laundry
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px 
       - entity:  weather.foxfield_co
         type: weather-forecast
+      - type: 'custom:simple-thermostat'
+        name: JC Thermostat
+        entity: climate.jc_thermostat
+        step_size: 1
     icon: 'mdi:home'
     path: default_view
     title: Home
+
+#Scenes Card
+  
   - badges: []
     cards:
     - type: vertical-stack
@@ -156,6 +191,9 @@ views:
     icon: 'mdi:television'
     path: scenes
     title: Scenes
+    
+#Laundry Room Card
+
   - badges: []
     cards:
       - entities:
@@ -165,10 +203,9 @@ views:
         title: Lights
         type: entities
       - entities:
-          - binary_sensor.philips_sml001_96c4b704_occupancy
-          - sensor.philips_sml001_96c4b704_illuminan
-          - sensor.philips_sml001_96c4b704_power
-          - sensor.philips_sml001_96c4b704_temperature
+          - binary_sensor.hue_motion_sensor_1_motion
+          - sensor.hue_motion_sensor_1_light_level
+          - sensor.hue_motion_sensor_1_temperature
         show_header_toggle: false
         title: Sensors
         type: entities
@@ -181,6 +218,9 @@ views:
     icon: 'mdi:tumble-dryer'
     path: laundry
     title: Laundry
+
+#Lights Card
+
   - badges: []
     cards:
       - entities:
@@ -227,9 +267,18 @@ views:
     icon: 'mdi:lightbulb-outline'
     path: lights
     title: Lights
+
+#Automations Card
+
   - badges: []
     cards:
       - entities:
+        - automation.good_morning
+        - automation.good_morning_lights_off
+        - automation.night_on
+        - automation.good_night
+        - automation.jc_night_on
+        - automation.jc_night_off
         - automation.lifx_entertainment
         - automation.laundry_lights_off
         - automation.laundry_lights_on

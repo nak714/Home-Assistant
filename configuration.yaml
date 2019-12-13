@@ -6,6 +6,8 @@ mobile_app:
 
 discovery:
 
+
+
 lovelace:
   mode: yaml
   
@@ -22,6 +24,21 @@ weather:
   latitude: 39.59644363634748
   longitude: -104.7531521000905
   name: Foxfield CO
+
+
+                    #################################################
+                    #                                               #
+                    #               Homeywell MyTTC                 #
+                    #                                               #
+                    #################################################
+
+climate:
+  - platform: honeywell
+    username: !secret username
+    password: !secret password
+    region: us
+
+
 
                     #################################################
                     #                                               #
@@ -45,6 +62,23 @@ scene:
       light.dining: on
       
 
+                    #################################################
+                    #                                               #
+                    #               HACS Sensors                    #
+                    #                                               #
+                    #################################################
+
+sensor:  
+  - platform: attributes
+    friendly_name: "Batteries"
+    attribute: battery_level
+    unit_of_measurement: "%"
+    entities:
+      - sensor.hue_motion_sensor_1_light_level
+      
+frontend:
+  themes: !include_dir_merge_named themes/
+ 
 
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
@@ -74,7 +108,7 @@ cloud:
 
 lifx:
   light:
-    - broadcast: 10.0.25.230
+    - broadcast: 10.0.30.230
     
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -87,11 +121,11 @@ homeassistant:
     #   id: 5afeac34e59d4830907486020e43d175
     #   user_id: ff2822a8b5e04ba89598193e3b31c195
     #   device_trackers:
-    #     - device_tracker.jc_s_ip
+    #     - device_tracker.jc_iphone
     # - name: Kim
     #   id: e70f5ba719624cc3a4afecf332755baf
     #   device_trackers:
-    #     - device_tracker.kimberly_cernacs_iphone
+    #     - device_tracker.kim_iphone
 
   
 
