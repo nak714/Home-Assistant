@@ -1,0 +1,6 @@
+  - platform: template
+    sensors:
+      sky_condition:
+        friendly_name: "Sky Condition"
+        value_template: >-
+          {{ states('weather.foxfield_co') }}

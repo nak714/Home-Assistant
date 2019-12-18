@@ -1,0 +1,11 @@
+  alias: arrive_home
+  trigger:
+    entity_id: group.someone_home
+    platform: state
+    to: home
+  condition:
+    after: sunset
+    condition: sun
+  action:
+    service: homeassistant.turn_on
+    entity_id: group.kitchen

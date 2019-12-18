@@ -1,0 +1,33 @@
+- id: LIFX_Entertainment_On
+  alias: LIFX Entertainment Light On
+  trigger:
+  - event: sunset
+    offset: '- 00:30:00'
+    platform: sun
+  condition: []
+  action:
+  - entity_id: light.tv
+    service: light.turn_on
+  - data:
+      entity_id: timer.lifx_tv_light
+    service: timer.cancel
+  - delay: 00:00:05
+  - data:
+      duration: 06:30:00
+      entity_id: timer.lifx_tv_light
+    service: timer.start
+
+- id: LIFX_Entertainment_Off    
+  alias: LIFX Entertainment Light Off
+  description: ''
+  trigger:
+  - event_data:
+      entity_id: timer.lifx_tv_light
+    event_type: timer.finish
+    platform: event
+  condition: []
+  action:
+  - data:
+      entityid: light.tv
+    service: light.turn_off    
+    

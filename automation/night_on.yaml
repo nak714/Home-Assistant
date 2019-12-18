@@ -1,0 +1,44 @@
+- id: night_east_on
+  alias: Night East On
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -00:40:00
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: group.east_lights
+    service: light.turn_on
+  - data:
+      entity_id: scene.kims_korner
+    service: scene.turn_on
+
+- id: night_west_on
+  alias: Night West On
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -00:20:00
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: light.murano
+    service: light.turn_on
+  - data:
+      entity_id: scene.man_cave
+    service: scene.turn_on
+    
+- id: jc_night_on
+  alias: JC Night On
+  description: ''
+  trigger:
+  - event: sunset
+    offset: 01:30:00
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: scene.john
+    service: scene.turn_on    

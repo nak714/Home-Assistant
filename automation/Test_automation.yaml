@@ -1,0 +1,14 @@
+# - id: lets_test_it
+#   alias: Lets Test It!
+#   trigger:
+#   - entity_id: group.someone_home
+#     from: away
+#     platform: state
+#     to: home
+#   condition:
+#   - after: sunset
+#     condition: sun
+#   action:
+#   - data: {}
+#     entity_id: group.kitchen
+#     service: light.turn_on

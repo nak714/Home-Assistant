@@ -1,0 +1,12 @@
+  platform: template
+  switches:
+    family_room:
+      value_template: "{{ is_state('group.family_room','on') }}"
+      turn_on:
+        service: homeassistant.turn_on
+        data:
+          entity_id: group.family_room
+      turn_off:
+        service: homeassistant.turn_off
+        data:
+          entity_id: group.family_room

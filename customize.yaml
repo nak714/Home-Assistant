@@ -14,8 +14,10 @@ person.kim:
     editable: true
     entity_picture: /local/pics/people/kim.jpg
     friendly_name: Kim
-device_tracker.jc_iphone:
+device_tracker.johns_iphone:
   entity_picture: /local/pics/people/JC.jpg
+device_tracker.kim_iphone:
+  entity_picture: /local/pics/people/kim.jpg  
 
   
         ########################################################

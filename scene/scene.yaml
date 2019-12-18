@@ -1,0 +1,59 @@
+  - name: Laundry
+    entities:
+      light.l1:
+        state: on
+        brightness_pct: 100
+      light.l2:
+        state: on
+        brigthness_pct: 100
+
+  - name: Hallway
+    entities:
+      light.h_1:
+        state: on
+        brightness_pct: 75
+      light.h_2:
+        state: on
+        brightness_pct: 75
+
+  - name: Office
+    entities:
+      light.office_1:
+        state: on
+        brightness: 144
+        color_temp: 433
+
+
+  - name: Movie Time On
+    entities:
+      group.man_cave: off
+      light.murano: off
+      group.upstairs: off
+      light.tv: 
+        state: on
+
+  - name: Movie Time Off
+    entities:
+      group.man_cave: on
+      light.murano: on
+
+  - name: John
+    entities:
+      group.john:
+        state: on
+        brightness: 144
+        color_temp: 433
+
+  - name: Kims Korner
+    entities:
+      group.kims_korner:
+        state: on
+        brightness: 225
+        color_temp: 433
+
+  - name: Man Cave
+    entities:
+      group.man_cave:
+        state: on
+        brightness: 144
+        color_temp: 433

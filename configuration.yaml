@@ -47,19 +47,19 @@ climate:
                     #################################################
                     
 
-scene:
-  - name: Movie Time On
-    entities:
-      light.man_cave: off
-      light.dining: off
-      light.upstairs: off
-      light.tv: 
-        state: on
+# scene:
+#   - name: Movie Time On
+#     entities:
+#       light.man_cave: off
+#       light.dining: off
+#       light.upstairs: off
+#       light.tv: 
+#         state: on
       
-  - name: Movie Time Off
-    entities:
-      light.man_cave: on
-      light.dining: on
+#   - name: Movie Time Off
+#     entities:
+#       light.man_cave: on
+#       light.dining: on
       
 
                     #################################################
@@ -68,6 +68,7 @@ scene:
                     #                                               #
                     #################################################
 
+
 #sensor:  
 #  - platform: attributes
 #    friendly_name: "Batteries"
@@ -75,11 +76,19 @@ scene:
 #    unit_of_measurement: "%"
 #    entities:
 #      - sensor.hue_motion_sensor_1_light_level
+
+hue:
+  bridges:
+    - host: 10.0.1.230
+      allow_unreachable: true
+      allow_hue_groups: false
+      
+
+
       
 frontend:
   themes: !include_dir_merge_named themes/
  
-
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
@@ -103,8 +112,72 @@ zone:
     icon: mdi:home
 
 
-
+config:
 cloud:
+  alexa:
+    filter:
+      include_entities:
+        - group.kitchen
+        - group.upstairs
+        - group.downstairs
+        - group.family_room
+        - grouop.stairway
+        - group.man_cave
+        - group.hallway
+        - group.john
+        - group.stove
+        - light.family_1
+        - light.family_2
+        - light.murano
+      exclude_entities:
+        - light.k_1
+        - light.k_2
+        - light.k_3
+        - light.k_4
+        - light.k_5
+        - light.k_6
+        - light.hallway_1
+        - light.hallway_2
+        - light.man_cave_1
+        - light.man_cave_2
+        - light.stairway_1
+        - light.stairway_2
+        - light.stairway_3
+        - light.john_1
+        - light.john_2
+        - light.stove_1
+        - light.stove_2
+      exclude_domains:
+        - switch
+        - automation
+        - sensor
+        - script
+    entity_config:
+      group.kitchen:
+        name: Kitchen
+      group.upstairs:  
+        name: Upstairs
+      group.downstairs:
+        name: Downstairs
+      group.family_room:
+        name: Family Room
+      group.stairway:
+        name: Stairway
+      group.man_cave:
+        name: Man Cave
+      group.hallway:
+        name: Hallway
+      group.john:
+        name: John
+      group.stove:
+        name: Stove
+      light.murano:
+        name: Dining
+      light.office_1:
+        name: Office
+        
+          
+
 
 lifx:
   light:
@@ -117,7 +190,7 @@ person:
       id: 5afeac34e59d4830907486020e43d175
       user_id: ff2822a8b5e04ba89598193e3b31c195
       device_trackers:
-        - device_tracker.jc_iphone
+        - device_tracker.johns_iphone
     - name: Kim
       id: e70f5ba719624cc3a4afecf332755baf
       device_trackers:
@@ -145,9 +218,20 @@ zha:
     usb_path: /dev/ttyUSB1
     database_path: zigbee.db
     
+
+#################################################
+#                                               #
+#               Includes                        #
+#                                               #
+#################################################
+
     
 group: !include_dir_merge_named group
-automation: !include automations.yaml
+automation: !include_dir_merge_list automation
+switch: !include_dir_list switches
+sensor: !include_dir_merge_list sensors
+scene: !include_dir_merge_list scene
+timer: !include_dir_merge_named timers
 script: !include scripts.yaml
 homeassistant:
   customize: !include customize.yaml

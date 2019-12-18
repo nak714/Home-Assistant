@@ -1,0 +1,12 @@
+  platform: template
+  switches:
+    office:
+      value_template: "{{ is_state('scene.office','on') }}"
+      turn_on:
+        service: homeassistant.turn_on
+        data:
+          entity_id: scene.office
+      turn_off:
+        service: homeassistant.turn_off
+        data:
+          entity_id: scene.office

@@ -1,8 +1,8 @@
 laundry:
   name: Laundry
   entities:
-    - light.sengled_z01_cia19nae26_42040403_level_on_off
-    - light.sengled_z01_cia19nae26_dca60503_level_on_off
+    - light.l1
+    - light.l2
 
 
 kitchen:
@@ -16,6 +16,17 @@ kitchen:
     - light.k_5
     - light.k_6
 
+east lights:
+  name: East Lights
+  entities:
+    - group.stove
+    - group.family_room
+
+kims korner:
+  name: Kims Korner
+  entities:
+    - light.k_2
+    - light.k_4
 
 hallway:
   name: Hallway
@@ -24,7 +35,7 @@ hallway:
     - light.h_2
 
 
-mancave:
+man cave:
   name: Man Cave
   entities:
     - light.man_cave_1
@@ -41,4 +52,30 @@ stove:
   name: Stove
   entities:
   - light.stove_1
-  - ligth.stove_2
+  - light.stove_2
+  
+family room:
+  name: Family Room
+  entities:
+  - light.family_1
+  - light.family_2
+  
+John:
+  name: John
+  entities:
+  - light.john_1
+  - light.john_2
+  
+Downstairs:
+  name: Downstairs
+  entities:
+  - group.stove
+  - group.man_cave
+  - group.family_room
+  - light.murano
+
+Upstairs:
+  name: Upstairs
+  entities:
+  - group.stairway
+  - light.upstairs_hall_1

@@ -1,0 +1,29 @@
+- id: jc_night_off
+  alias: JC Night Off
+  description: ''
+  trigger:
+  - at: '23:45:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: group.john
+    service: light.turn_off
+    
+- id: good_night
+  alias: Good Night
+  description: ''
+  trigger:
+  - at: '23:30:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: group.downstairs
+    service: light.turn_off
+  - data:
+      entity_id: group.kitchen
+    service: light.turn_off
+  - data:
+      entity_id: group.upstairs
+    service: light.turn_off

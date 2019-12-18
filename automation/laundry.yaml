@@ -1,0 +1,39 @@
+# - id: '1575432903237'
+#   alias: Laundry Lights On
+#   description: ''
+#   trigger:
+#   - entity_id: binary_sensor.laundry_sensor_motion
+#     from: 'off'
+#     platform: state
+#     to: 'on'
+#   condition:
+#   - below: '60'
+#     condition: numeric_state
+#     entity_id: sensor.laundry_sensor_light_level
+#   action:
+#   - alias: ''
+#     data:
+#       brightness_pct: 100
+#       entity_id: group.laundry
+#     service: light.turn_on
+#   - data:
+#       entity_id: timer.laundry_lights
+#     service: timer.cancel
+#   - delay: 00:00:05
+#   - data:
+#       duration: 00:12:00
+#       entity_id: timer.laundry_lights
+#     service: timer.start
+# - id: '1575443252163'
+#   alias: Laundry Lights Off
+#   description: ''
+#   trigger:
+#   - event_data:
+#       entity_id: timer.laundry_lights
+#     event_type: timer.finished
+#     platform: event
+#   condition: []
+#   action:
+#   - data:
+#       entity_id: group.laundry
+#     service: light.turn_off

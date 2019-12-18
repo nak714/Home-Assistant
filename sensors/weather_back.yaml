@@ -1,0 +1,10 @@
+#   - platform: template
+#     sensors:
+#       sky_condition:
+#         friendly_name: "Sky Condition"
+#         value_template: >-
+#           {% if is_state('weather.foxfield_co', 'cloudy') %}
+#             overcast
+#           {% else %}
+#             other condition
+#           {% endif %}

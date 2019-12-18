@@ -1,0 +1,5 @@
+someone home:
+  name: Someone Home
+  entities:
+    - device_tracker.kim_iphone
+    - device_tracker.johns_iphone

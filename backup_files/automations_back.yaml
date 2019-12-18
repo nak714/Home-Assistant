@@ -1,0 +1,240 @@
+- id: '1575432903237'
+  alias: Laundry Lights On
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.laundry_sensor_motion
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - below: '60'
+    condition: numeric_state
+    entity_id: sensor.laundry_sensor_light_level
+  action:
+  - alias: ''
+    data:
+      brightness_pct: 100
+      entity_id: group.laundry
+    service: light.turn_on
+  - data:
+      entity_id: timer.laundry_lights
+    service: timer.cancel
+  - delay: 00:00:05
+  - data:
+      duration: 00:12:00
+      entity_id: timer.laundry_lights
+    service: timer.start
+- id: '1575443252163'
+  alias: Laundry Lights Off
+  description: ''
+  trigger:
+  - event_data:
+      entity_id: timer.laundry_lights
+    event_type: timer.finished
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: group.laundry
+    service: light.turn_off
+- id: '1575477726057'
+  alias: LIFX Entertainment Light On
+  description: ''
+  trigger: []
+  condition:
+  - after: sunset
+    after_offset: '1:00'
+    condition: sun
+  action:
+  - data:
+      entity_id: light.tv
+    service: light.turn_on
+  - data:
+      entity_id: timer.lifx_tv_light
+    service: timer.cancel
+  - delay: 00:00:05
+  - data:
+      duration: 06:30:00
+      entity_id: timer.lifx_tv_light
+    service: timer.start
+- id: '1576165476281'
+  alias: Good Morning
+  description: ''
+  trigger:
+  - at: 05:15:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: group.downstairs
+    service: light.turn_on
+- id: '1576165611736'
+  alias: Good Morning Lights Off
+  description: ''
+  trigger:
+  - event: sunrise
+    offset: 00:30:00
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: group.downstairs
+    service: light.turn_off
+- id: '1576166063742'
+  alias: Night On
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -00:30:00
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: group.downstairs
+    service: light.turn_on
+- id: '1576166148014'
+  alias: JC Night On
+  description: ''
+  trigger:
+  - event: sunset
+    offset: 01:30:00
+    platform: sun
+  condition: []
+  action:
+  - data:
+      brightness: 144
+      color_temp: 433
+      entity_id: group.john
+    service: light.turn_on
+- id: '1576166316582'
+  alias: JC Night Off
+  description: ''
+  trigger:
+  - at: '23:45:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: group.john
+    service: light.turn_off
+- id: '1576166756372'
+  alias: Good Night
+  description: ''
+  trigger:
+  - at: '23:30:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: group.downstairs
+    service: light.turn_off
+  - data:
+      entity_id: group.kitchen
+    service: light.turn_off
+  - data:
+      entity_id: group.upstairs
+    service: light.turn_off
+- id: '1576261946237'
+  alias: Test
+  description: ''
+  trigger:
+  - entity_id: light.office_1
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: light.office_1
+    entity_id: light.offic_1
+    service: light.turn_on
+  - delay: 00:00:05
+  - data:
+      duration: 00:00:45
+      entity_id: timer.office_light
+    service: timer.start
+- id: '1576262892905'
+  alias: Test Off
+  description: ''
+  trigger:
+  - event_data:
+      entity_id: timer.office_light
+    event_type: timer.finished
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: light.office_1
+    service: light.turn_off
+- id: '1576269760100'
+  alias: LIFX Entertainment Light Off
+  description: ''
+  trigger:
+  - event_data:
+      entity_id: timer.lifx_tv_light
+    event_type: timer.finish
+    platform: event
+  condition: []
+  action:
+  - data:
+      entityid: light.tv
+    service: light.turn_off
+
+# Extended Lights Cloudy
+    
+- id: extended_lights_on_am
+  alias: Extended Lights on a.m.
+  trigger:
+  - event: sunrise
+    offset: 00:30:00
+    platform: sun
+  condition: 
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'cloudy'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'fog'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'partlycloudy'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'pouring'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'rainy'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'snowy'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'snowy-rainy'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'lightning-rainy'
+  action:
+  - data:
+      entity_id: group.downstairs
+    service: light.turn_on
+  - data:
+      entityid: timer.cloudy_lights
+    service: timer.cancel
+  - delay: 00:00:05
+  - data:
+      duration: 01:00:00
+      entity_id: timer.cloud_lights
+    service: timer.start
+- id: extended_lights_off_am
+  alias: Extended Lights off a.m.
+  trigger:
+  - event_data:
+      entiry_id: timer.cloudy_lights
+    event_type: timer.finished
+    platform: event
+  action:
+  - data:
+      entity_id: group.lights_downstairs
+    service: lights.turn_off

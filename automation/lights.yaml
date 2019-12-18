@@ -1,0 +1,33 @@
+
+# - id: '1576261946237'
+#   alias: Test
+#   description: ''
+#   trigger:
+#   - entity_id: light.office_1
+#     from: 'off'
+#     platform: state
+#     to: 'on'
+#   condition: []
+#   action:
+#   - data:
+#       entity_id: light.office_1
+#     entity_id: light.offic_1
+#     service: light.turn_on
+#   - delay: 00:00:05
+#   - data:
+#       duration: 00:00:45
+#       entity_id: timer.office_light
+#     service: timer.start
+# - id: '1576262892905'
+#   alias: Test Off
+#   description: ''
+#   trigger:
+#   - event_data:
+#       entity_id: timer.office_light
+#     event_type: timer.finished
+#     platform: event
+#   condition: []
+#   action:
+#   - data:
+#       entity_id: light.office_1
+#     service: light.turn_off

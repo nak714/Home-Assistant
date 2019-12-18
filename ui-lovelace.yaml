@@ -14,6 +14,7 @@ views:
     #   - entity: binary_sensor.remote_ui
       - entity: person.john
       - entity: person.kim
+    #   - entiry: sensor.my_ecobee_temperature
     #  - entity: device_tracker.jc_s_iphone
     #   - entity: sensor.ssid
     #   - entity: sensor.sim_1
@@ -50,25 +51,27 @@ views:
         - type: horizontal-stack
           cards:
           - type: entity-button
-            entity: light.downstairs
+            entity: switch.downstairs
             name: Downstairs
             show_state: true
+            icon: "mdi:ceiling-light"
             icon_height: 30px
           - type: entity-button
-            entity: light.upstairs
+            entity: switch.upstairs
             name: Upstairs
             show_state: true
+            icon: "mdi:ceiling-light"
             icon_height: 30px
         - type: horizontal-stack
           cards:
           - type: entity-button
-            entity: light.man_cave
+            entity: switch.man_cave
             name: Man Cave
             show_state: true
             icon: "mdi:lamp"
             icon_height: 30px
           - type: entity-button
-            entity: light.hallway
+            entity: switch.hallway
             name: Hallway
             show_state: true
             icon: "mdi:ceiling-light"
@@ -82,19 +85,19 @@ views:
         - type: horizontal-stack
           cards:
           - type: entity-button
-            entity: light.stairway
+            entity: switch.stairway
             name: Stairway
             show_state: true
             icon: "mdi:ceiling-light"
             icon_height: 30px     
           - type: entity-button
-            entity: light.john
+            entity: switch.john
             name: John Bed Side
             show_state: true
             icon: 'mdi:lamp'
             icon_height: 30px
           - type: entity-button
-            entity: group.laundry
+            entity: switch.laundry
             name: Laundry
             show_state: true
             icon: "mdi:ceiling-light"
@@ -102,7 +105,7 @@ views:
         - type: horizontal-stack
           cards:
           - type: entity-button
-            entity: light.family_room
+            entity: switch.family_room
             name: Family Rm
             show_state: true
             icon: "mdi:lamp"
@@ -122,19 +125,19 @@ views:
         - type: horizontal-stack
           cards:
           - type: entity-button
-            entity: light.office
+            entity: light.office_1
             name: Office
             show_state: true
             icon: "mdi:desk-lamp"
             icon_height: 30px     
           - type: entity-button
-            entity: light.kitchen
+            entity: switch.kitchen
             name: Kitchen
             show_state: true
             icon: "mdi:ceiling-light"
             icon_height: 30px
           - type: entity-button
-            entity: light.stove
+            entity: switch.stove
             name: Stove
             show_state: true
             icon: "mdi:ceiling-light"
@@ -142,8 +145,8 @@ views:
       - entity:  weather.foxfield_co
         type: weather-forecast
       - type: 'custom:simple-thermostat'
-        name: JC Thermostat
-        entity: climate.jc_thermostat
+        name: Ecobee
+        entity: climate.my_ecobee
         step_size: 1
     icon: 'mdi:home'
     path: default_view
@@ -192,15 +195,15 @@ views:
   - badges: []
     cards:
       - entities:
-          - light.sengled_z01_cia19nae26_42040403_level_on_off
-          - light.sengled_z01_cia19nae26_dca60503_level_on_off
+          - light.l1
+          - light.l2
         show_header_toggle: true
-        title: Lights
+        title: Laundry
         type: entities
       - entities:
-          - binary_sensor.hue_motion_sensor_1_motion
-          - sensor.hue_motion_sensor_1_light_level
-          - sensor.hue_motion_sensor_1_temperature
+          - binary_sensor.laundry_sensor_motion
+          - sensor.laundry_sensor_light_level
+          - sensor.laundry_sensor_temperature
         show_header_toggle: false
         title: Sensors
         type: entities
@@ -269,16 +272,30 @@ views:
     cards:
       - entities:
         - automation.good_morning
-        - automation.good_morning_lights_off
-        - automation.night_on
-        - automation.good_night
         - automation.jc_night_on
-        - automation.jc_night_off
-        - automation.lifx_entertainment
-        - automation.laundry_lights_off
+        - automation.lifx_entertainment_light_on
         - automation.laundry_lights_on
-        title: Automation
-        type: entities     
+        - automation.extended_lights_on_a_m
+        - automation.night_east_on
+        - automation.night_west_on
+        show_header_toggle: false
+        title: Lights On
+        type: entities
+      - entities:
+        - automation.good_morning_lights_off
+        - automation.jc_night_off
+        - automation.lifx_entertainment_light_off
+        - automation.laundry_lights_off
+        - automation.extended_lights_off_a_m
+        - automation.good_night
+        show_header_toggle: false
+        title: Lights Off
+        type: entities
+    #   - entities:
+    #     - automation.lets_test_it
+    #     show_header_toggle: false
+    #     title: Test Automations
+    #     type: entities
     icon: "mdi:cogs"
     path: automations
     title: Automations

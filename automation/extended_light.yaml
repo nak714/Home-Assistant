@@ -1,0 +1,79 @@
+- id: extended_lights_on_am
+  alias: Extended Lights on a.m.
+  trigger:
+  - event: sunrise
+    offset: 00:30:05
+    platform: sun      
+  condition: 
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'cloudy'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'fog'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'partlycloudy'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'pouring'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'rainy'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'snowy'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'snowy-rainy'
+    - condition: state
+      entity_id: sensor.sky_condition
+      state: 'lightning-rainy'
+    # - condition: state
+    #   entity_id: sensor.sky_condition
+    #   state: 'sunny'
+  action:
+  - data:
+      entity_id: group.downstairs
+    service: light.turn_on
+  - data:
+      entity_id: timer.cloudy_lights
+    service: timer.cancel
+  - delay: 00:00:05
+  - data:
+      duration: 01:00:00
+      entity_id: timer.cloudy_lights
+    service: timer.start
+- id: extended_lights_off_am
+  alias: Extended Lights off a.m.
+  trigger:
+  - event_data:
+      entiry_id: timer.cloudy_lights
+    event_type: timer.finished
+    platform: event
+  action:
+  - data:
+      entity_id: group.downstairs
+    service: light.turn_off
+
+
+
+# # Conditions returned
+
+# #‘clear-night’
+# #‘cloudy’
+# #‘fog’
+# #‘hail’
+# #‘lightning’
+# #‘lightning-rainy’
+# #‘partlycloudy’
+# #‘pouring’
+# #‘rainy’
+# #‘snowy’
+# #‘snowy-rainy’
+# #‘sunny’
+# #‘windy’
+# #‘windy-variant’
+# #‘exceptional’
