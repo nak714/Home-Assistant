@@ -1,11 +1,34 @@
-- id: '1576707804802'
-  alias: LIFX On
+- id: '1576902839679'
+  alias: New Automation
   description: ''
   trigger:
+  - entity_id: group.someone_home
+    from: not_home
+    platform: state
+    to: home
+  condition: []
+  action:
+  - entity_id: light.k_1
+    service: light.turn_on
+  - delay: 00:00:05
+  - entity_id: timer.hallway_lights
+    service: timer.start
+- id: '1576903617341'
+  alias: New Automation
+  description: ''
+  trigger:
+  - entity_id: group.someone_home
+    from: not_home
+    platform: state
+    to: home
   - event: sunset
-    offset: '- 00:30:00'
+    offset: 00:30:00
     platform: sun
   condition: []
   action:
-  - entity_id: light.tv
+  - data:
+      entity_id: group.kitchen
     service: light.turn_on
+  - delay: 00:00:05
+  - entity_id: timer.hallway_lights
+    service: timer.start

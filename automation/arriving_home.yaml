@@ -1,11 +1,38 @@
+- id: arrive_home
   alias: arrive_home
   trigger:
-    entity_id: group.someone_home
+  - entity_id: sensor.home_presence
+    from: Away
     platform: state
-    to: home
+    to: Home
   condition:
     after: sunset
     condition: sun
   action:
-    service: homeassistant.turn_on
-    entity_id: group.kitchen
+  - entity_id:
+    - group.kitchen
+    - group.hallway
+    - light.family_2
+    service: light.turn_on
+  - data:
+      entity_id: timer.hallway_lights
+    service: timer.cancel
+  - delay: 00:00:05
+  - data:
+      duration: 00:05:00
+      entity_id: timer.hallway_lights
+    service: timer.start
+    
+    
+- id: hallway_lights_off
+  alias: hallway_lights_off
+  trigger:
+  - event_data:
+      entity_id: timer.hallway_lights
+    event_type: timer.finished
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: group.hallway
+    service: light.turn_off

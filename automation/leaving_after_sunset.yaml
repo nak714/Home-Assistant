@@ -1,0 +1,18 @@
+- alias: leaving_after_sunset
+  trigger:
+  - entity_id: sensor.home_presence
+    from: "home"
+    platform: state
+    to: "not_home"
+  condition:
+  - after: sunset
+    after_offset: "00:30:00"
+    condition: sun
+  action:
+    service: light.turn_off
+    entity_id: 
+    - light.family_2
+    - light.group_kitchen
+    - light.group_upstairs
+    - light.group_laundry
+    - light.office_1

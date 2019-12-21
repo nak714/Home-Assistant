@@ -1,0 +1,12 @@
+  platform: template
+  switches:
+    kims_korner:
+      value_template: "{{ is_state('group.kims_korner','on') }}"
+      turn_on:
+        service: homeassistant.turn_on
+        data:
+          entity_id: group.kims_korner
+      turn_off:
+        service: homeassistant.turn_off
+        data:
+          entity_id: group.kims_korner

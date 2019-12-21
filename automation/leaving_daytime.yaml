@@ -1,0 +1,14 @@
+  alias: leaving_daytime
+  trigger:
+  - entity_id: sensor.home_presence
+    from: "home"
+    platform: state
+    to: "not_home"
+  condition:
+  - condition: sun
+    before: sunset
+    before_offset: "-00:45:00"
+    after: sunrisen
+  action:
+  - entity_id: group.all_lights
+    service: turn.lights_off

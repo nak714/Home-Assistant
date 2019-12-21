@@ -33,7 +33,15 @@ hallway:
   entities:
     - light.h_1
     - light.h_2
-
+    - light.h3
+    - light.h4
+    
+upper hallway:
+  name: Upper Hallway
+  entities:
+    - light.uh1
+    - light.uh2
+    - light.uh3
 
 man cave:
   name: Man Cave

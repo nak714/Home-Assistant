@@ -91,10 +91,10 @@ views:
             icon: "mdi:ceiling-light"
             icon_height: 30px     
           - type: entity-button
-            entity: switch.john
-            name: John Bed Side
+            entity: switch.upper_hallway
+            name: Upper Hallway
             show_state: true
-            icon: 'mdi:lamp'
+            icon: 'mdi:ceiling-light'
             icon_height: 30px
           - type: entity-button
             entity: switch.laundry
@@ -125,10 +125,10 @@ views:
         - type: horizontal-stack
           cards:
           - type: entity-button
-            entity: light.office_1
-            name: Office
+            entity: light.sink
+            name: Sink
             show_state: true
-            icon: "mdi:desk-lamp"
+            icon: "mdi:ceiling-light"
             icon_height: 30px     
           - type: entity-button
             entity: switch.kitchen
@@ -139,6 +139,26 @@ views:
           - type: entity-button
             entity: switch.stove
             name: Stove
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px
+        - type: horizontal-stack
+          cards:
+          - type: entity-button
+            entity: light.office_1
+            name: Office
+            show_state: true
+            icon: "mdi:desk-lamp"
+            icon_height: 30px
+          - type: entity-button
+            entity: switch.john
+            name: John Bed Side
+            show_state: true
+            icon: "mdi:lamp"
+            icon_height: 30px
+          - type: entity-button
+            entity: switch.kims_korner
+            name: Kims Korner
             show_state: true
             icon: "mdi:ceiling-light"
             icon_height: 30px
@@ -207,12 +227,6 @@ views:
         show_header_toggle: false
         title: Sensors
         type: entities
-      - entities:
-          - automation.laundry_lights_off
-          - automation.laundry_lights_on
-        show_header_toggle: true
-        title: Automations
-        type: entities
     icon: 'mdi:tumble-dryer'
     path: laundry
     title: Laundry
@@ -274,7 +288,7 @@ views:
         - automation.good_morning
         - automation.jc_night_on
         - automation.lifx_entertainment_light_on
-        - automation.laundry_lights_on
+        # - automation.laundry_lights_on
         - automation.extended_lights_on_a_m
         - automation.night_east_on
         - automation.night_west_on
@@ -285,17 +299,123 @@ views:
         - automation.good_morning_lights_off
         - automation.jc_night_off
         - automation.lifx_entertainment_light_off
-        - automation.laundry_lights_off
+        # - automation.laundry_lights_off
         - automation.extended_lights_off_a_m
         - automation.good_night
         show_header_toggle: false
         title: Lights Off
         type: entities
-    #   - entities:
-    #     - automation.lets_test_it
-    #     show_header_toggle: false
-    #     title: Test Automations
-    #     type: entities
+      - entities:
+        - automation.arrive_home
+        show_header_toggle: false
+        title: Test Automations
+        type: entities
     icon: "mdi:cogs"
     path: automations
     title: Automations
+
+# Climate
+
+  - title: Climate
+    badges:
+      - sensor.my_ecobee_temperature
+      - sensor.my_ecobee_humidity
+      - binary_sensor.my_ecobee_occupancy
+      - sensor.master_bedroom_temperature
+      - binary_sensor.master_bedroom_occupancy
+      - sensor.office_temperature
+      - binary_sensor.office_occupancy
+    cards:
+      - type: vertical-stack
+        cards:
+        - type: 'custom:simple-thermostat'
+          name: Ecobee
+          entity: climate.my_ecobee
+          step_size: 1
+        - type: horizontal-stack
+          cards:
+          - type: sensor
+            entity: sensor.my_ecobee_temperature
+            icon: "mdi:thermometer"
+            graph: line
+            name: Ecobee Thermostat
+            detail: 1
+            line_color: '#3498db'
+            line_width: 1
+            accuracy: 500
+          - type: sensor
+            entity: sensor.my_ecobee_humidity
+            icon: "mdi:water-percent"
+            graph: line
+            name: Ecobee Humidity
+            detail: 1
+            line_color: '#3498db'
+            line_width: 1
+            accuracy: 500
+        - type: horizontal-stack
+          cards:
+          - type: sensor
+            entity: sensor.office_temperature
+            icon: "mdi:thermometer"
+            graph: line
+            name: Office Temp
+            detail: 1
+            line_color: '#3498db'
+            line_width: 1
+            accuracy: 500
+          - type: sensor
+            entity: sensor.master_bedroom_temperature
+            icon: "mdi:thermometer"
+            graph: line
+            name: Master Bed Temp
+            detail: 1
+            line_color: '#3498db'
+            line_width: 1
+            accuracy: 500            
+    icon: 'mdi:home-thermometer'
+    path: ecobee
+
+# Environmentals
+
+  - title: Environmentals
+    cards:
+      - type: sensor
+        entity: sensor.my_ecobee_temperature
+        icon: "mdi:thermometer"
+        graph: line
+        name: Ecobee Thermostat
+        detail: 1
+        line_color: '#3498db'
+        line_width: 1
+        accuracy: 500
+      - type: sensor
+        entity: sensor.master_bedroom_temperature
+        icon: "mdi:thermometer"
+        graph: line
+        name: Master Bed Sensor Temp
+        detail: 1
+        line_color: '#3498db'
+        line_width: 1
+        accuracy: 500
+      - type: sensor
+        entity: sensor.office_temperature
+        icon: "mdi:thermometer"
+        graph: line
+        name: Office Sensor Temp
+        detail: 1
+        line_color: '#3498db'
+        line_width: 1
+        accuracy: 500
+      - type: sensor
+        entity: sensor.my_ecobee_humidity
+        icon: "mdi:water-percent"
+        graph: line
+        name: Humidity
+        detail: 1
+        height: 100
+        line_color: '#3445db'
+        line_width: 1
+        accuracy: 500
+    icon: "mdi:gauge"
+    path: environmentals
+    

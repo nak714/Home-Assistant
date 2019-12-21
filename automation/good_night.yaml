@@ -2,7 +2,7 @@
   alias: JC Night Off
   description: ''
   trigger:
-  - at: '23:45:00'
+  - at: "23:45:00"
     platform: time
   condition: []
   action:
@@ -14,16 +14,10 @@
   alias: Good Night
   description: ''
   trigger:
-  - at: '23:30:00'
+  - at: "23:30:00"
     platform: time
   condition: []
   action:
   - data:
-      entity_id: group.downstairs
-    service: light.turn_off
-  - data:
-      entity_id: group.kitchen
-    service: light.turn_off
-  - data:
-      entity_id: group.upstairs
+      entity_id: group.all_lights
     service: light.turn_off

@@ -2,7 +2,7 @@
   alias: Extended Lights on a.m.
   trigger:
   - event: sunrise
-    offset: 00:30:05
+    offset: "00:30:05"
     platform: sun      
   condition: 
     condition: or
@@ -31,9 +31,6 @@
     - condition: state
       entity_id: sensor.sky_condition
       state: 'lightning-rainy'
-    # - condition: state
-    #   entity_id: sensor.sky_condition
-    #   state: 'sunny'
   action:
   - data:
       entity_id: group.downstairs
@@ -50,12 +47,11 @@
   alias: Extended Lights off a.m.
   trigger:
   - event_data:
-      entiry_id: timer.cloudy_lights
+      entity_id: timer.cloudy_lights
     event_type: timer.finished
     platform: event
   action:
-  - data:
-      entity_id: group.downstairs
+  - entity_id: group.downstairs
     service: light.turn_off
 
 

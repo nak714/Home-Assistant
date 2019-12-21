@@ -1,0 +1,6 @@
+  - platform: template
+    sensors:
+      home_presence:
+        friendly_name: "Home Presence"
+        value_template: >-
+          {{ states('group.someone_home') }}

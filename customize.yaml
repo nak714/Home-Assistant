@@ -80,3 +80,9 @@ light.tv:
   editable: true
   friendly_name: LIFX
   icon: 'mdi:led-strip-variant'
+  
+  
+
+
+climate.my_ecobee:
+  entity_picture: /local/pics/product/ecobee.png
