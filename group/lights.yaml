@@ -87,3 +87,10 @@ Upstairs:
   entities:
   - group.stairway
   - light.upstairs_hall_1
+  
+basement stairs:
+  name: Basement Stairs
+  entities:
+  - light.bs1
+#  - light.bs2
+  - light.bs3

@@ -82,7 +82,7 @@ hue:
 
 
 notify:
-  - name: Ecobee Notify
+  - name: My Ecobee
     platform: ecobee
 
       

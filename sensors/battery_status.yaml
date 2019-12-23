@@ -1,0 +1,31 @@
+  - platform: template
+    sensors: 
+      bs1_battery:
+        value_template: '{{ states.binary_sensor.bs1_motion_motion.attributes.battery_level|int }}'  
+        friendly_name: 'BS1 Battery' 
+        unit_of_measurement: '%'
+
+      bs2_battery:
+        value_template: '{{ states.binary_sensor.bs2_motion_motion.attributes.battery_level|int }}'  
+        friendly_name: 'BS2 Battery' 
+        unit_of_measurement: '%'
+
+      laundry_battery:
+        value_template: '{{ states.binary_sensor.laundry_sensor_motion.attributes.battery_level|int }}'  
+        friendly_name: 'Laundry Battery' 
+        unit_of_measurement: '%'
+
+      stairway_battery:
+        value_template: '{{ states.binary_sensor.motion_sensor_stairway_motion.attributes.battery_level|int }}'  
+        friendly_name: 'Stairway Battery' 
+        unit_of_measurement: '%'
+
+      upstairs_e_battery:
+        value_template: '{{ states.binary_sensor.motion_sensor_upstair_hall_east_motion.attributes.battery_level|int }}'  
+        friendly_name: 'Upstairs E. Battery' 
+        unit_of_measurement: '%'
+
+      upstairs_w_battery:
+        value_template: '{{ states.binary_sensor.motion_sensor_upstair_hall_west_motion.attributes.battery_level|int }}'  
+        friendly_name: 'Upstairs W. Battery' 
+        unit_of_measurement: '%'

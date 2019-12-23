@@ -172,6 +172,67 @@ views:
     path: default_view
     title: Home
 
+# Climate
+
+  - title: Climate
+    badges:
+      - sensor.my_ecobee_temperature
+      - sensor.my_ecobee_humidity
+      - binary_sensor.my_ecobee_occupancy
+      - sensor.master_bedroom_temperature
+      - binary_sensor.master_bedroom_occupancy
+      - sensor.office_temperature
+      - binary_sensor.office_occupancy
+    cards:
+      - type: vertical-stack
+        cards:
+        - type: 'custom:simple-thermostat'
+          name: Ecobee
+          entity: climate.my_ecobee
+          step_size: 1
+        - type: horizontal-stack
+          cards:
+          - type: sensor
+            entity: sensor.my_ecobee_temperature
+            icon: "mdi:thermometer"
+            graph: line
+            name: Ecobee Thermostat
+            detail: 1
+            line_color: '#3498db'
+            line_width: 1
+            accuracy: 500
+          - type: sensor
+            entity: sensor.my_ecobee_humidity
+            icon: "mdi:water-percent"
+            graph: line
+            name: Ecobee Humidity
+            detail: 1
+            line_color: '#3498db'
+            line_width: 1
+            accuracy: 500
+        - type: horizontal-stack
+          cards:
+          - type: sensor
+            entity: sensor.office_temperature
+            icon: "mdi:thermometer"
+            graph: line
+            name: Office Temp
+            detail: 1
+            line_color: '#3498db'
+            line_width: 1
+            accuracy: 500
+          - type: sensor
+            entity: sensor.master_bedroom_temperature
+            icon: "mdi:thermometer"
+            graph: line
+            name: Master Bed Temp
+            detail: 1
+            line_color: '#3498db'
+            line_width: 1
+            accuracy: 500            
+    icon: 'mdi:home-thermometer'
+    path: ecobee
+
 #Scenes Card
   
   - badges: []
@@ -297,6 +358,8 @@ views:
         type: entities
       - entities:
         - automation.good_morning_lights_off
+        - automation.leaving_daytime
+        - automation.leaving_after_sunset
         - automation.jc_night_off
         - automation.lifx_entertainment_light_off
         # - automation.laundry_lights_off
@@ -313,67 +376,70 @@ views:
     icon: "mdi:cogs"
     path: automations
     title: Automations
+    
 
-# Climate
+# Battery Levels
 
-  - title: Climate
-    badges:
-      - sensor.my_ecobee_temperature
-      - sensor.my_ecobee_humidity
-      - binary_sensor.my_ecobee_occupancy
-      - sensor.master_bedroom_temperature
-      - binary_sensor.master_bedroom_occupancy
-      - sensor.office_temperature
-      - binary_sensor.office_occupancy
+  - Title: Battery
     cards:
       - type: vertical-stack
         cards:
-        - type: 'custom:simple-thermostat'
-          name: Ecobee
-          entity: climate.my_ecobee
-          step_size: 1
         - type: horizontal-stack
           cards:
-          - type: sensor
-            entity: sensor.my_ecobee_temperature
-            icon: "mdi:thermometer"
-            graph: line
-            name: Ecobee Thermostat
-            detail: 1
-            line_color: '#3498db'
-            line_width: 1
-            accuracy: 500
-          - type: sensor
-            entity: sensor.my_ecobee_humidity
-            icon: "mdi:water-percent"
-            graph: line
-            name: Ecobee Humidity
-            detail: 1
-            line_color: '#3498db'
-            line_width: 1
-            accuracy: 500
+          - type: gauge
+            entity: sensor.bs1_battery
+            name: BS1 Battery
+            unit: '%'
+            severity:
+              green: 75
+              yellow: 50
+              red: 25
+          - type: gauge
+            entity: sensor.bs2_battery
+            name: BS2 Battery
+            unit: '%'
+            severity:
+              green: 75
+              yellow: 50
+              red: 25
+        - type: horizontal-stack
+          cards:              
+          - type: gauge
+            entity: sensor.laundry_battery
+            name: Laundry Battery
+            unit: '%'
+            severity:
+              green: 75
+              yellow: 50
+              red: 25
+          - type: gauge
+            entity: sensor.stairway_battery
+            name: Stairway Battery
+            unit: '%'
+            severity:
+              green: 75
+              yellow: 50
+              red: 25
         - type: horizontal-stack
           cards:
-          - type: sensor
-            entity: sensor.office_temperature
-            icon: "mdi:thermometer"
-            graph: line
-            name: Office Temp
-            detail: 1
-            line_color: '#3498db'
-            line_width: 1
-            accuracy: 500
-          - type: sensor
-            entity: sensor.master_bedroom_temperature
-            icon: "mdi:thermometer"
-            graph: line
-            name: Master Bed Temp
-            detail: 1
-            line_color: '#3498db'
-            line_width: 1
-            accuracy: 500            
-    icon: 'mdi:home-thermometer'
-    path: ecobee
+          - type: gauge
+            entity: sensor.upstairs_e_battery
+            name: Upstairs E Battery
+            unit: '%'
+            severity:
+              green: 75
+              yellow: 50
+              red: 25
+          - type: gauge
+            entity: sensor.upstairs_w_battery
+            name: Upstairs W Battery
+            unit: '%'
+            severity:
+              green: 75
+              yellow: 50
+              red: 25              
+    icon: "mdi:battery-outline"
+    path: battery
 
 # Environmentals
 
