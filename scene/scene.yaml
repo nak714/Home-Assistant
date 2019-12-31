@@ -23,6 +23,11 @@
         brightness: 144
         color_temp: 433
 
+  - name: Garage Exterior
+    entities:
+      light.exterior_garage:
+        state: on
+        brightness_pct: 60
 
   - name: Movie Time On
     entities:
@@ -57,3 +62,23 @@
         state: on
         brightness: 144
         color_temp: 433
+
+  - name: Breakfast 25
+    entities:
+      light.breakfast_chandelier:
+        state: on
+        brightness_pct: 25
+
+  - name: Breakfast 50
+    entities:
+      light.breakfast_chandelier:
+        state: on
+        brightness_pct: 50
+
+  - name: Breakfast 100
+    entities:
+      light.breakfast_chandelier:
+        state: on
+        brightness_pct: 100
+        
+        

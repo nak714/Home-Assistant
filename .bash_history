@@ -154,3 +154,36 @@ git commit -m "my changes"
 git remote add origin https://github.com/NAK714/Home-Assistant
 git push -u origin master
 git status
+git status
+git status
+git add .
+git commit -m "config.yaml split"
+git remote add origin https://github.com/NAK714/Home-Assistant
+git push - u origin master
+git push -u origin master
+git status
+git add .
+git -m commit "changes"
+git commit -m "changes"
+git remote
+git remote add origin https://github.com/NAK714/Home-Assistant
+git push -u origin master
+git status
+git status
+git add .
+git commit - m "additions and changes"
+git commit -m "additions and changes"
+git remote add origin https://github/NAK714/Home-Assistant
+git push -u origin master
+git status
+python3
+python3 -m venv C:\Users\jcernac\PycharmProjects\caseta
+python3 -m venv C:\Users\jcernac\PycharmProjects\caseta
+python3 -m venv C:\Users\jcernac\PycharmProjects\caseta
+python3 -m venv C:\Users\jcernac\PycharmProjects\caseta
+python3 -m venv C:\Users\jcernac\PycharmProjects\caseta
+python3 -m venv C:\Users\jcernac\PycharmProjects\caseta
+winpty c:python3/python.exe
+winpty C:\Users\jcernac\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.8/python.exe
+winpty /C/Users/jcernac/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.8/python.exe
+python3

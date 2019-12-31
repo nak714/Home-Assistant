@@ -53,14 +53,29 @@
       entity_id: light.master_hall
     service: light.turn_off
   - data:
+      entity_id: light.uh1
+    service: light.turn_off
+  - data:
+      entity_id: light.uh2
+    service: light.turn_off
+  - data:
+      entity_id: light.uh3
+    service: light.turn_off    
+  - data:
       entity_id: light.office_1
     service: light.turn_off
   - data:
-      entity_id: light.hallway_1
+      entity_id: light.h_1
     service: light.turn_off
   - data:
-      entity_id: light.hallway_2
+      entity_id: light.h_2
     service: light.turn_off
+  - data:
+      entity_id: light.h3
+    service: light.turn_off
+  - data:
+      entity_id: light.h4
+    service: light.turn_off    
   - data:
       entity_id: light.john_1
     service: light.turn_off
@@ -68,10 +83,10 @@
       entity_id: light.john_2
     service: light.turn_off
   - data:
-      entity_id: light.laundry_1
+      entity_id: light.l_1
     service: light.turn_off
   - data:
-      entity_id: light.laundry_2
+      entity_id: light.l_2
     service: light.turn_off
   - data:
       entity_id: light.tv

@@ -162,6 +162,26 @@ views:
             show_state: true
             icon: "mdi:ceiling-light"
             icon_height: 30px
+        - type: horizontal-stack
+          cards:
+          - type: entity-button
+            entity: light.breakfast_chandelier
+            name: Breakfast
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px     
+          - type: entity-button
+            entity: switch.breakfast_50
+            name: Breakfast 50
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px
+          - type: entity-button
+            entity: switch.breakfast_25
+            name: Breakfast 25
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px            
       - entity:  weather.foxfield_co
         type: weather-forecast
       - type: 'custom:simple-thermostat'
@@ -170,11 +190,65 @@ views:
         step_size: 1
     icon: 'mdi:home'
     path: default_view
+    background: linear-gradient(rgba(0, 170, 255, .75), rgba(91, 88, 88, .75))    
     title: Home
+
+# Caseta
+
+  - title: Caseta
+    # background: linear-gradient(rgba(0, 170, 255, .75), rgba(172, 74, 154, .75))
+    background: linear-gradient(rgba(0, 170, 255, .75), rgba(91, 88, 88, .75))
+    cards:
+      - type: vertical-stack
+        cards:
+        - type: horizontal-stack
+          cards:
+          - type: entity-button
+            entity: switch.breakfast
+            name: Breakfast Area
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px
+          - type: entity-button
+            entity: switch.garage_exterior
+            name: Garage Exterior
+            show_state: true
+            icon: "mdi:wall-sconce"
+            icon_height: 30px
+          - type: entity-button
+            entity: switch.garage_interior
+            name: Garage Interior
+            show_state: true
+            icon: "mdi:lightbulb"
+            icon_height: 30px
+          title: Caseta Lights            
+        - type: horizontal-stack
+          cards:
+          - type: entity-button
+            entity: switch.office_track
+            name: Office Track Light
+            show_state: true
+            icon: "mdi:track-light"
+            icon_height: 30px
+        #   - type: entity-button
+        #     entity: switch.hallway
+        #     name: Hallway
+        #     show_state: true
+        #     icon: "mdi:ceiling-light"
+        #     icon_height: 30px
+        #   - type: entity-button
+        #     entity: light.murano
+        #     name: Murano
+        #     show_state: true
+        #     icon: "mdi:ceiling-light"
+        #     icon_height: 30px
+    icon: 'mdi:lightbulb-on'
+    path: caseta
 
 # Climate
 
   - title: Climate
+    background: linear-gradient(rgba(0, 170, 255, .75), rgba(91, 88, 88, .75))
     badges:
       - sensor.my_ecobee_temperature
       - sensor.my_ecobee_humidity
@@ -236,6 +310,7 @@ views:
 #Scenes Card
   
   - badges: []
+    background: linear-gradient(rgba(0, 170, 255, .75), rgba(91, 88, 88, .75))  
     cards:
     - type: vertical-stack
       cards:
@@ -274,6 +349,7 @@ views:
 #Laundry Room Card
 
   - badges: []
+    background: linear-gradient(rgba(0, 170, 255, .75), rgba(91, 88, 88, .75))  
     cards:
       - entities:
           - light.l1
@@ -295,6 +371,7 @@ views:
 #Lights Card
 
   - badges: []
+    background: linear-gradient(rgba(0, 170, 255, .75), rgba(91, 88, 88, .75))  
     cards:
       - entities:
           - light.h_1
@@ -344,6 +421,7 @@ views:
 #Automations Card
 
   - badges: []
+    background: linear-gradient(rgba(0, 170, 255, .75), rgba(91, 88, 88, .75))
     cards:
       - entities:
         - automation.good_morning
@@ -370,8 +448,15 @@ views:
         type: entities
       - entities:
         - automation.arrive_home
+        - automation.garage_button
         show_header_toggle: false
         title: Test Automations
+        type: entities
+      - entities:
+        - automation.garage_exterior_on
+        - automation.garage_exterior_off
+        show_header_toggle: false
+        title: Garage Lights
         type: entities
     icon: "mdi:cogs"
     path: automations
@@ -380,7 +465,8 @@ views:
 
 # Battery Levels
 
-  - Title: Battery
+  - title: Battery
+    background: linear-gradient(rgba(0, 170, 255, .75), rgba(91, 88, 88, .75))  
     cards:
       - type: vertical-stack
         cards:
@@ -437,13 +523,22 @@ views:
             severity:
               green: 75
               yellow: 50
-              red: 25              
+              red: 25
+          - type: gauge
+            entity: sensor.samjin_button_65af0401_power
+            Name: Garage Button
+            unit: '%'
+            severity:
+              green: 75
+              yellow: 50
+              red: 25            
     icon: "mdi:battery-outline"
     path: battery
 
 # Environmentals
 
   - title: Environmentals
+    background: linear-gradient(rgba(0, 170, 255, .75), rgba(91, 88, 88, .75))  
     cards:
       - type: sensor
         entity: sensor.my_ecobee_temperature

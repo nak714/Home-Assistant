@@ -128,10 +128,17 @@ cloud:
         - group.kims_korner
         - group.stove
         - group.upper_hallway
+        - group.basement_stairs
         - light.family_1
         - light.family_2
         - light.murano
         - light.sink
+        - light.garage_light
+        - light.exterior_garage
+        - light.office_track
+        - light.breakfast_chandelier
+        - light.tv
+        
       exclude_entities:
         - light.k_1
         - light.k_2
@@ -157,6 +164,9 @@ cloud:
         - light.uh1
         - light.uh2
         - light.uh3
+        - light.bs1
+        - light.bs2
+        - light.bs3
         - light.sengled_z01_cia19nae26_42040403_level_on_off
         - light.sengled_z01_cia19nae26_dca60503_level_on_off
         - group.all_devices
@@ -164,6 +174,10 @@ cloud:
         - group.all_scripts
         - group.all_automations
         - group.someone_home
+        - light.caseta_r_wireless_in_wall_dimmer
+        - light.caseta_r_wireless_in_wall_dimmer_2
+        - light.caseta_r_wireless_in_wall_dimmer_3
+        - light.caseta_r_wireless_in_wall_dimmer_4
       exclude_domains:
         - switch
         - automation
@@ -193,16 +207,33 @@ cloud:
         name: Kim
       group.stove:
         name: Stove
+      group.basement_stairs:
+        name: Basement Stairs
       light.murano:
         name: Dining
       light.office_1:
         name: Office
       light.sink:
         name: Sink
+      light.tv:
+        name: Entertainment Light
+      light.garage_light:
+        name: Garage
+      light.exterior_garage:
+        name: Garage Outside
+      light.office_track:
+        name: Office Track
+      light.breakfast_chandelier:
+        name: Breakfast
           
         
           
-
+# Example configuration.yaml entry
+lutron_caseta:
+    host: 10.0.1.231
+    keyfile: caseta.key
+    certfile: caseta.crt
+    ca_certs: caseta-bridge.crt
 
 lifx:
   light:

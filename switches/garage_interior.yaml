@@ -1,0 +1,12 @@
+  platform: template
+  switches:
+    garage_interior:
+      value_template: "{{ is_state('light.garage_light','on') }}"
+      turn_on:
+        service: homeassistant.turn_on
+        data:
+          entity_id: light.garage_light
+      turn_off:
+        service: homeassistant.turn_off
+        data:
+          entity_id: light.garage_light

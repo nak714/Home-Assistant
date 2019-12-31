@@ -29,7 +29,7 @@
   - data:
       entity_id: scene.man_cave
     service: scene.turn_on
-    
+
 - id: jc_night_on
   alias: JC Night On
   description: ''

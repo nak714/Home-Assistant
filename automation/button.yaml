@@ -1,5 +1,5 @@
-- id: '1577594212270'
-  alias: Test Button
+- id: garage_button
+  alias: garage_button
   description: ''
   trigger:
   - event_data:
@@ -7,7 +7,8 @@
       device_ieee: 28:6d:97:00:01:04:af:65
     event_type: zha_event
     platform: event
-  condition: []
   action:
-  - entity_id: light.office_track
+  - entity_id: light.garage_light
     service: light.toggle
+    
+# Also available is button_double and button_hold commands.    

@@ -1,0 +1,20 @@
+- id: garage_exterior_on
+  alias: Garage Exterior On
+  trigger:
+  - event: sunset
+    offset: "00:30:00"
+    platform: sun
+  action:
+  - data:
+      entity_id: scene.garage_exterior
+    service: scene.turn_on
+
+- id: garage_exterior_off
+  alias: Garage Exterior Off
+  trigger:
+  - event: sunrise
+    platform: sun
+  action:
+  - data:
+      entity_id: light.exterior_garage
+    service: light.turn_off

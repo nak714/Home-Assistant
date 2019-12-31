@@ -58,18 +58,18 @@
 
 # # Conditions returned
 
-# #‘clear-night’
-# #‘cloudy’
-# #‘fog’
-# #‘hail’
-# #‘lightning’
-# #‘lightning-rainy’
-# #‘partlycloudy’
-# #‘pouring’
-# #‘rainy’
-# #‘snowy’
-# #‘snowy-rainy’
-# #‘sunny’
-# #‘windy’
-# #‘windy-variant’
-# #‘exceptional’
+# ‘clear-night’
+# ‘cloudy’
+# ‘fog’
+# ‘hail’
+# ‘lightning’
+# ‘lightning-rainy’
+# ‘partlycloudy’
+# ‘pouring’
+# ‘rainy’
+# ‘snowy’
+# ‘snowy-rainy’
+# ‘sunny’
+# ‘windy’
+# ‘windy-variant’
+# ‘exceptional’
