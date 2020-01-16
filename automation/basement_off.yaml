@@ -1,0 +1,11 @@
+- id: basement_lights
+  alias: Basement Lights Off
+  trigger:
+  - at: "01:30:00"
+    platform: time
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: switch.basement_lights
+      
+  

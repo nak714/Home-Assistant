@@ -204,13 +204,13 @@ views:
         - type: horizontal-stack
           cards:
           - type: entity-button
-            entity: switch.breakfast
+            entity: light.breakfast_chandelier
             name: Breakfast Area
             show_state: true
             icon: "mdi:ceiling-light"
             icon_height: 30px
           - type: entity-button
-            entity: switch.garage_exterior
+            entity: light.exterior_garage
             name: Garage Exterior
             show_state: true
             icon: "mdi:wall-sconce"
@@ -225,23 +225,60 @@ views:
         - type: horizontal-stack
           cards:
           - type: entity-button
-            entity: switch.office_track
+            entity: light.office_track
             name: Office Track Light
             show_state: true
             icon: "mdi:track-light"
             icon_height: 30px
-        #   - type: entity-button
-        #     entity: switch.hallway
-        #     name: Hallway
-        #     show_state: true
-        #     icon: "mdi:ceiling-light"
-        #     icon_height: 30px
-        #   - type: entity-button
-        #     entity: light.murano
-        #     name: Murano
-        #     show_state: true
-        #     icon: "mdi:ceiling-light"
-        #     icon_height: 30px
+          - type: entity-button
+            entity: switch.basement_lights
+            name: Basement
+            show_state: true
+            icon: "mdi:lightbulb-on"
+            icon_height: 30px
+        - type: horizontal-stack
+          cards:
+          - type: entity-button
+            entity: light.master_bath_main_lights
+            name: Master Bath Sink
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px
+          - type: entity-button
+            entity: light.master_bath_tub_lights
+            name: Master Bath Tub
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px            
+        - type: horizontal-stack
+          cards:
+          - type: entity-button
+            entity: switch.breakfast_50
+            name: Breakfast 50
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px
+          - type: entity-button
+            entity: switch.breakfast_25
+            name: Breakfast 25
+            show_state: true
+            icon: "mdi:ceiling-light"
+            icon_height: 30px
+          - type: entity-button     
+            entity: switch.office_track_24
+            name: Office Track 24
+            show_state: true
+            icon: "mdi:track-light"
+            icon_height: 30px
+          title: Caseta Scenes            
+        - type: horizontal-stack
+          cards:
+          - type: entity-button
+            entity:  scene.garage_exterior
+            name: Garage Exterior 60
+            show_state: true
+            icon: "mdi:wall-sconce"
+            icon_height: 30px
     icon: 'mdi:lightbulb-on'
     path: caseta
 
@@ -443,18 +480,23 @@ views:
         # - automation.laundry_lights_off
         - automation.extended_lights_off_a_m
         - automation.good_night
+        - automation.basement_lights_off
         show_header_toggle: false
         title: Lights Off
         type: entities
       - entities:
+        - automation.arrive_anytime
         - automation.arrive_home
+        - automation.john_away
         - automation.garage_button
+        - automation.master_bath_all_on
+        - automation.master_check_motion
         show_header_toggle: false
         title: Test Automations
         type: entities
       - entities:
         - automation.garage_exterior_on
-        - automation.garage_exterior_off
+        - automation.garage_exterior_off        
         show_header_toggle: false
         title: Garage Lights
         type: entities
@@ -488,6 +530,14 @@ views:
               green: 75
               yellow: 50
               red: 25
+          - type: gauge
+            entity: sensor.aeotec_limited_zwa005_trisensor_battery_level
+            name: Master Bath Shower Battery
+            unit: '%'
+            severity:
+              green: 75
+              yellow: 50
+              red: 25              
         - type: horizontal-stack
           cards:              
           - type: gauge
@@ -506,6 +556,14 @@ views:
               green: 75
               yellow: 50
               red: 25
+          - type: gauge
+            entity: sensor.aeon_labs_zw100_multisensor_6_battery_level
+            name: Master Bath Battery
+            unit: '%'
+            severity:
+              green: 75
+              yellow: 50
+              red: 25              
         - type: horizontal-stack
           cards:
           - type: gauge
@@ -579,4 +637,39 @@ views:
         accuracy: 500
     icon: "mdi:gauge"
     path: environmentals
-    
+
+  - title: Sensors
+    background: linear-gradient(rgba(0, 170, 255, .75), rgba(91, 88, 88, .75))
+    cards:
+      - type: vertical-stack
+        cards:
+          - entities:
+              - zwave.aeon_labs_zw100_multisensor_6
+              - sensor.aeon_labs_zw100_multisensor_6_burglar
+              - sensor.aeon_labs_zw100_multisensor_6_luminance
+              - sensor.aeon_labs_zw100_multisensor_6_temperature
+              - sensor.aeon_labs_zw100_multisensor_6_relative_humidity
+            title: Master Bath Sensors
+            icon: "mdi:clipboard-pulse"
+            show_header_toggle: false
+            type: entities
+          - entities:
+              - zwave.aeotec_limited_zwa005_trisensor
+              - binary_sensor.aeotec_limited_zwa005_trisensor_sensor    
+              - sensor.aeotec_limited_zwa005_trisensor_luminance
+              - sensor.aeotec_limited_zwa005_trisensor_temperature
+            title: Master Bath Shower Sensors
+            icon: "mdi:clipboard-pulse"
+            show_header_toggle: false
+            type: entities
+      - type: vertical-stack
+        cards:
+          - entities:
+              - zwave.aeotec_limited_zwa008_door_window_sensor_7
+              - sensor.aeotec_limited_zwa008_door_window_sensor_7_access_control
+            title: Door Sensors
+            icon: "mdi:clipboard-pulse"
+            show_header_toggle: false
+            type: entities
+    icon: "mdi:clipboard-pulse"    
+    path: sensors

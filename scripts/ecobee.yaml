@@ -1,0 +1,25 @@
+  ecobee_home:  
+    alias: 'Ecobee Home'
+    sequence:
+      - service: climate.set_preset_mode
+        data:
+          entity_id: climate.my_ecobee    
+          preset_mode: 'home'
+
+
+  ecobee_away:
+    alias: 'Ecobee Away'
+    sequence:
+      service: climate.set_preset_mode
+      data:
+        entity_id: climate.my_ecobee    
+        preset_mode: 'away'
+
+
+  ecobee_sleep:
+    alias: 'Ecobee Sleep'
+    sequence:
+      service: climate.set_preset_mode
+      data:
+        entity_id: climate.my_ecobee    
+        preset_mode: 'sleep'

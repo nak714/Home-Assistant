@@ -1,13 +1,18 @@
-- id: '1577594212270'
-  alias: Test Button
+- id: '1578887993871'
+  alias: New Automation
   description: ''
   trigger:
-  - event_data:
-      command: button_single
-      device_ieee: 28:6d:97:00:01:04:af:65
-    event_type: zha_event
-    platform: event
-  condition: []
+  - above: '2'
+    entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
+    platform: numeric_state
+  condition:
+  - below: '40'
+    condition: numeric_state
+    entity_id: sensor.aeon_labs_zw100_multisensor_6_luminance
+  - after: 05:30:00
+    before: '23:59:59'
+    condition: time
   action:
-  - entity_id: light.office_track
-    service: light.toggle
+  - data: {}
+    entity_id: light.master_bath_tub_lights
+    service: light.turn_on

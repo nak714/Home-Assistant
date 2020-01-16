@@ -7,7 +7,7 @@
   condition:
   - condition: sun
     after: sunset
-    after_offset: "00:30:00"
+    after_offset: "00:10:00"
   action:
     service: homeassistant.turn_off
     data:
@@ -25,3 +25,4 @@
         - switch.hallway
         - switch.upper_hallway
         - switch.basement_stairs
+        - switch.basement_work_area_main

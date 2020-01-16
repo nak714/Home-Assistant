@@ -1,7 +1,15 @@
 - id: arrive_home
   alias: arrive_home
   trigger:
-  - entity_id: sensor.home_presence
+#   - entity_id: sensor.home_presence
+#     from: not_home
+#     platform: state
+#     to: home
+  - entity_id: device_tracker.johns_iphone
+    from: not_home
+    platform: state
+    to: home
+  - entity_id: device_tracker.kim_iphone
     from: not_home
     platform: state
     to: home
@@ -10,10 +18,15 @@
     condition: sun
   action:
   - entity_id:
-    - group.kitchen
     - group.hallway
-    - light.family_2
+    - group.kims_korner
+    - switch.garage_interior
+    - switch.breakfast
+    # - light.family_2
     service: homeassistant.turn_on
+  - entity_id: light.family_2
+    service: light.turn_on
+
   - data:
       entity_id: timer.hallway_lights
     service: timer.cancel
@@ -21,6 +34,15 @@
   - data:
       duration: 00:05:00
       entity_id: timer.hallway_lights
+    service: timer.start
+
+  - data:
+      entity_id: timer.garage_breakfast_lights
+    service: timer.cancel
+  - delay: 00:00:05
+  - data:
+      duration: 00:10:00
+      entity_id: timer.garage_breakfast_lights
     service: timer.start
     
     
@@ -31,8 +53,21 @@
       entity_id: timer.hallway_lights
     event_type: timer.finished
     platform: event
-  condition: []
   action:
   - data:
       entity_id: group.hallway
     service: light.turn_off
+    
+- id: garage_breakfast_lights_off
+  alias: garage_breakfast_lights_off
+  trigger:
+  - event_data:
+      entity_id: timer.garage_breakfast_lights
+    event_type: timer.finished
+    platform: event
+  action:
+  - data:
+      entity_id:
+      - switch.garage_interior
+      - switch.breakfast
+    service: homeassistant.turn_off

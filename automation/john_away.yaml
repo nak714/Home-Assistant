@@ -1,0 +1,12 @@
+- id: john_away
+  alias: John Away
+  trigger:
+    entity_id: device_tracker.johns_iphone
+    from: home
+    platform: state
+    to: not_home
+  action:
+    entity_id:
+      light.office_track:
+      light.office_1:
+    service: homeassistant.turn_off

@@ -8,7 +8,11 @@
     event_type: zha_event
     platform: event
   action:
-  - entity_id: light.garage_light
+  - data:
+      entity_id: light.garage_light
     service: light.toggle
+
+    
+    
     
 # Also available is button_double and button_hold commands.    

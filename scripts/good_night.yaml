@@ -1,0 +1,39 @@
+  good_night: 
+    alias: Good Night
+    sequence:
+    - data:
+        entity_id: group.downstairs
+      service: homeassistant.turn_off
+    - data:
+        entity_id: group.kitchen
+      service: homeassistant.turn_off
+    - data:
+        entity_id: group.hallway
+      service: homeassistant.turn_off
+    - data:
+        entity_id: switch.basement_stairs
+      service: homeassistant.turn_off
+    - data:
+        entity_id: group.upstairs
+      service: homeassistant.turn_off
+    - data:
+        entity_id: group.upper_hallway
+      service: homeassistant.turn_off
+    - data:
+        entity_id: group.laundry
+      service: homeassistant.turn_off
+    - data:  
+        entity_id: group.john
+      service: homeassistant.turn_off      
+    - data:
+        entity_id: group.caseta_lights
+      service: homeassistant.turn_off
+    - data:
+        entity_id: light.office_1
+      service: light.turn_off
+    - data:  
+        entity_id: light.tv
+      service: light.turn_off
+    - data:  
+        entity_id: light.sink
+      service: light.turn_off      

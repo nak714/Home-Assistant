@@ -1,0 +1,11 @@
+- id: arrive_anytime
+  alias: arrive_anytime
+  trigger:
+  - entity_id: sensor.home_presence
+    from: not_home
+    platform: state
+    to: home
+  action:
+    service_template: >
+      {% if ((now().hour >= 630) or (now().hour <= 2230)) %} script.ecobee_home
+      {% else %} script.ecobee_sleep {% endif %}

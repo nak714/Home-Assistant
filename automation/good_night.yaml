@@ -20,8 +20,4 @@
   action:
   - data:
       entity_id: group.all_lights
-    service: light.turn_off
-  - delay: 00:00:03
-  - data:
-      entity_id: scene.garage_exterior
-    service: scene.turn_on    
+    service: script.good_night

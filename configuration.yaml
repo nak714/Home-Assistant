@@ -6,7 +6,7 @@ mobile_app:
 
 discovery:
 
-
+python_script:
 
 lovelace:
   mode: yaml
@@ -26,37 +26,7 @@ weather:
   name: !secret weather_name
 
 
-                    #################################################
-                    #                                               #
-                    #               Homeywell MyTTC                 #
-                    #                                               #
-                    #################################################
 
-climate:
-
-
-
-                    #################################################
-                    #                                               #
-                    #               Scene Config                    #
-                    #                                               #
-                    #################################################
-                    
-
-# scene:
-#   - name: Movie Time On
-#     entities:
-#       light.man_cave: off
-#       light.dining: off
-#       light.upstairs: off
-#       light.tv: 
-#         state: on
-      
-#   - name: Movie Time Off
-#     entities:
-#       light.man_cave: on
-#       light.dining: on
-      
 
                     #################################################
                     #                                               #
@@ -78,12 +48,17 @@ hue:
     - host: 10.0.1.230
       allow_unreachable: true
       allow_hue_groups: false
-      
 
 
 notify:
   - name: My Ecobee
     platform: ecobee
+    
+  - platform: clicksend
+    name: ClickSend
+    username: !secret clicksend_username
+    api_key: !secret clicksend_api_key
+    recipient: !secret clicksend_phone_no
 
       
 frontend:
@@ -228,7 +203,7 @@ cloud:
           
         
           
-# Example configuration.yaml entry
+
 lutron_caseta:
     host: 10.0.1.231
     keyfile: caseta.key
@@ -253,12 +228,7 @@ person:
         - device_tracker.kim_iphone
 
 
-# hue:
-#   bridges:
-#     - host: 10.0.1.X
-#       filename: phue.conf
-#       allow_unreachable: true
-#       allow_hue_groups: false
+
   
 
 #################################################
@@ -269,6 +239,7 @@ person:
 
 zwave:
     usb_path: /dev/ttyUSB0
+    network_key: "0x49, 0xc3, 0xd3, 0x05, 0x8d, 0x96, 0x06, 0x24, 0x5e, 0xe8, 0x46, 0x58, 0x54, 0x96, 0x4b, 0xa6"
 
 zha:
     usb_path: /dev/ttyUSB1
@@ -288,6 +259,6 @@ switch: !include_dir_list switches
 sensor: !include_dir_merge_list sensors
 scene: !include_dir_merge_list scene
 timer: !include_dir_merge_named timers
-script: !include scripts.yaml
+script: !include_dir_merge_named scripts
 homeassistant:
   customize: !include customize.yaml

@@ -92,5 +92,13 @@ basement stairs:
   name: Basement Stairs
   entities:
   - light.bs1
-#  - light.bs2
+  - light.bs2
   - light.bs3
+
+# Doesn't include exterior garage light  
+caseta lights:
+  name: Caseta Lights
+  entities:
+  - switch.breakfast
+  - switch.garage_interior
+  - switch.office_track

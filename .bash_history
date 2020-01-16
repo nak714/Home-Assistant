@@ -187,3 +187,10 @@ winpty c:python3/python.exe
 winpty C:\Users\jcernac\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.8/python.exe
 winpty /C/Users/jcernac/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.8/python.exe
 python3
+git status
+git add .
+git commit -m "add caseta"
+git remote add origin http://github.com/NAK714/Home-Assistant
+push -u origin master
+git push -u origin master
+git status

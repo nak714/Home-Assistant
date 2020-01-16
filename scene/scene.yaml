@@ -27,7 +27,7 @@
     entities:
       light.exterior_garage:
         state: on
-        brightness_pct: 60
+        brightness_pct: 38
 
   - name: Movie Time On
     entities:
@@ -80,5 +80,17 @@
       light.breakfast_chandelier:
         state: on
         brightness_pct: 100
+        
+  - name: Office Track 24
+    entities:
+      light.office_track:
+        state: on
+        brightness_pct: 24
+        
+  - name: Master Bath Night
+    entities:
+      light.master_bath_tub_lights:
+        state: on
+        brightness_pct: 24
         
         
