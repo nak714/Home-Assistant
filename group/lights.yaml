@@ -102,3 +102,22 @@ caseta lights:
   - switch.breakfast
   - switch.garage_interior
   - switch.office_track
+  - switch.downstairs_bathroom
+  
+All Lights:
+  name: All Lights
+  entities:
+  - group.downstairs
+  - group.kitchen
+  - group.hallway
+  - switch.basement_stairs
+  - group.upstairs
+  - group.upper_hallway
+  - group.laundry
+  - group.john
+  - group.caseta_lights
+  - light.office_1
+  - light.tv
+  - light.sink
+  - light.exterior_garage
+  

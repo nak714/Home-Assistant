@@ -22,15 +22,15 @@
     - data:
         entity_id: group.laundry
       service: homeassistant.turn_off
-    - data:  
-        entity_id: group.john
-      service: homeassistant.turn_off      
+    # - data:  
+    #     entity_id: group.john
+    #   service: homeassistant.turn_off      
     - data:
         entity_id: group.caseta_lights
       service: homeassistant.turn_off
-    - data:
-        entity_id: light.office_1
-      service: light.turn_off
+    # - data:
+    #     entity_id: light.office_1
+    #   service: light.turn_off
     - data:  
         entity_id: light.tv
       service: light.turn_off

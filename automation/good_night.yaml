@@ -19,5 +19,5 @@
   condition: []
   action:
   - data:
-      entity_id: group.all_lights
+      entity_id: all
     service: script.good_night

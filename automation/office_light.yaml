@@ -1,0 +1,24 @@
+- id: office_light_on
+  alias: Office Light On
+  trigger:
+  - entity_id: binary_sensor.philips_sml001_4c3ff606_occupancy
+    platform: state
+    to: 'on'
+  action:
+  - entity_id: 
+    - light.office_1
+    - scene.office_track_24
+    service: homeassistant.turn_on
+
+- id: office_light_off
+  alias: Office Light Off
+  trigger:
+  - entity_id: binary_sensor.philips_sml001_4c3ff606_occupancy
+    platform: state
+    to: 'off'
+    for: 00:05:00
+  action:
+  - entity_id:
+    - light.office_1
+    - light.office_track
+    service: homeassistant.turn_off

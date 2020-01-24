@@ -59,6 +59,30 @@ notify:
     username: !secret clicksend_username
     api_key: !secret clicksend_api_key
     recipient: !secret clicksend_phone_no
+    
+
+                    #################################################
+                    #                                               #
+                    #               InfluxDB                        #
+                    #                                               #
+                    #################################################
+
+
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: !secret influxDB username
+  password: !secret influxDB password
+  max_retries: 3
+  default_measurement: state
+
+
+                    #################################################
+                    #                                               #
+                    #               System Monitor                  #
+                    #                                               #
+                    #################################################
 
       
 frontend:

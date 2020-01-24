@@ -1,0 +1,10 @@
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: memory_free
+      - type: packets_in
+        arg: eno1
+      - type: packets_out
+        arg:  eno1
+      - type: processor_use

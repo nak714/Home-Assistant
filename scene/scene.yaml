@@ -92,5 +92,10 @@
       light.master_bath_tub_lights:
         state: on
         brightness_pct: 24
-        
+
+  - name: Downstairs Bathroom 25
+    entities:
+      light.downstairs_bathroom_vanity_lights:
+        state: on
+        brightness_pct: 25
         

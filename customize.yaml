@@ -60,7 +60,7 @@ sensor.aeotec_limited_zwa005_trisensor_temperature:
   editable: true
   friendly_name: Shower Temperature Sensor
   icon: mdi:thermometer
-zwave.aeon_labs_zw100_multisensor_6:
+zwave.aeon_labs_zw100_multisensor_6_2:
   friendly_name: Aeotec MultiSensor 6
 zwave.aeotec_limited_zwa005_trisensor:
   friendly_name: Aeotec TriSensor
@@ -71,7 +71,33 @@ sensor.aeotec_limited_zwa008_door_window_sensor_7_access_control:
   editable: true
   friendly_name: Interior Garage Door Sensor
   icon: mdi:door
+zwave.aeotec_limited_zwa005_trisensor_2:
+  friendly_name: Aeotec TriSensor  
+sensor.aeotec_limited_zwa005_trisensor_burglar_2:
+  editable: true
+  friendly_name: Shower Motion Sensor
+  icon: mdi:motion-sensor
+sensor.aeotec_limited_zwa005_trisensor_luminance_2:
+  editable: true
+  friendly_name: Downstairs Bathroom Luminance Sensor
+  icon: mdi:weather-sunny
+sensor.aeotec_limited_zwa005_trisensor_temperature_2:
+  editable: true
+  friendly_name: Downstairs Bathroom Temprature Sensor
+  icon: mdi:thermometer
   
+binary_sensor.philips_sml001_4c3ff606_occupancy:
+  friendly_name: Office Philips Motion
+sensor.philips_sml001_4c3ff606_illuminance:
+  friendly_name: Office Philips Light
+sensor.philips_sml001_4c3ff606_temperature:
+  friendly_name: Office Philips Temprature
+sensor.philips_sml001_4c3ff606_power:
+  friendly_name: Office Philips Battery
+binary_sensor.office_occupancy:
+  friendly_name: Office Ecobee Motion
+sensor.office_temperature:
+  friendly_name: Office Ecobee Temperature 
   
   
   

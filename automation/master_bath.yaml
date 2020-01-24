@@ -12,8 +12,8 @@
     condition: and
     conditions:
       - condition: numeric_state
-        entity_id: sensor.aeotec_limited_zwa005_trisensor_luminance
-        below: '250'
+        entity_id: sensor.aeon_labs_zw100_multisensor_6_luminance
+        below: '100'
       - condition: time
         after: '05:30:00'
         before: '23:59:59'
@@ -47,7 +47,8 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
-    below: '2'  
+    below: '2'
+    for: 00:02:30
   - platform: state
     to: 'off'
     entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor

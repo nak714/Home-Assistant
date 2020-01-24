@@ -47,7 +47,7 @@ views:
             action: call-service
             service: light.turn_off
             service_data:
-                entity_id: group.all_lights
+                entity_id: all
         - type: horizontal-stack
           cards:
           - type: entity-button
@@ -249,6 +249,14 @@ views:
             name: Master Bath Tub
             show_state: true
             icon: "mdi:ceiling-light"
+            icon_height: 30px
+        - type: horizontal-stack
+          cards:            
+          - type: entity-button    
+            entity: light.downstairs_bathroom_vanity_lights
+            name: Downstairs Bathroom
+            show_state: true
+            icon: "mdi:vanity-light"
             icon_height: 30px            
         - type: horizontal-stack
           cards:
@@ -279,6 +287,12 @@ views:
             show_state: true
             icon: "mdi:wall-sconce"
             icon_height: 30px
+          - type: entity-button     
+            entity: switch.downstairs_bathroom_25
+            name: Downstairs Bathroom 25
+            show_state: true
+            icon: "mdi:vanity-light"
+            icon_height: 30px            
     icon: 'mdi:lightbulb-on'
     path: caseta
 
@@ -449,6 +463,12 @@ views:
           - light.john_1
           - light.john_2
         title: John
+        icon: 'mdi:ceiling-light'
+        type: entities
+      - entities:
+          - entity: light.master_bath_main_lights
+          - entity: light.master_bath_tub_lights
+        title: Master Bath
         icon: 'mdi:ceiling-light'
         type: entities
     icon: 'mdi:lightbulb-outline'
@@ -644,7 +664,7 @@ views:
       - type: vertical-stack
         cards:
           - entities:
-              - zwave.aeon_labs_zw100_multisensor_6
+              - zwave.aeon_labs_zw100_multisensor_6_2
               - sensor.aeon_labs_zw100_multisensor_6_burglar
               - sensor.aeon_labs_zw100_multisensor_6_luminance
               - sensor.aeon_labs_zw100_multisensor_6_temperature
@@ -667,9 +687,30 @@ views:
           - entities:
               - zwave.aeotec_limited_zwa008_door_window_sensor_7
               - sensor.aeotec_limited_zwa008_door_window_sensor_7_access_control
+              - sensor.aeotec_limited_zwa008_door_window_sensor_7_access_control_2
             title: Door Sensors
             icon: "mdi:clipboard-pulse"
             show_header_toggle: false
             type: entities
+          - entities:
+              - zwave.aeotec_limited_zwa005_trisensor_2
+              - binary_sensor.aeotec_limited_zwa005_trisensor_sensor_2    
+              - sensor.aeotec_limited_zwa005_trisensor_luminance_2
+              - sensor.aeotec_limited_zwa005_trisensor_temperature_2
+            title: Downstairs Bathroom Sensors
+            icon: "mdi:clipboard-pulse"
+            show_header_toggle: false
+            type: entities
+          - entities:
+              - binary_sensor.philips_sml001_4c3ff606_occupancy
+              - sensor.philips_sml001_4c3ff606_illuminance 
+              - sensor.philips_sml001_4c3ff606_temperature
+              - sensor.philips_sml001_4c3ff606_power
+              - binary_sensor.office_occupancy
+              - sensor.office_temperature
+            title: Office Sensors
+            icon: "mdi:clipboard-pulse"
+            show_header_toggle: false
+            type: entities            
     icon: "mdi:clipboard-pulse"    
     path: sensors
