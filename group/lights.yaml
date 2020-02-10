@@ -101,7 +101,6 @@ caseta lights:
   entities:
   - switch.breakfast
   - switch.garage_interior
-  - switch.office_track
   - switch.downstairs_bathroom
   
 All Lights:
@@ -119,5 +118,17 @@ All Lights:
   - light.office_1
   - light.tv
   - light.sink
-  - light.exterior_garage
+  - switch.basement_work_area_main
   
+Movie Time Lights On:
+  name: Movie Time Lights On
+  entities:
+  - group.man_cave
+  - light.murano
+  - light.tv
+
+Movie Time Lights Off:
+  name: Movie Time Lights Off
+  entities:
+  - group.man_cave
+  - light.murano

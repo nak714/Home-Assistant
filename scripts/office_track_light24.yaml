@@ -1,0 +1,7 @@
+  office_track_light24:
+    alias: Office Track Light 24%
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.office_track
+          brightness_pct: 24

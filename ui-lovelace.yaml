@@ -62,6 +62,12 @@ views:
             show_state: true
             icon: "mdi:ceiling-light"
             icon_height: 30px
+          - type: entity-button
+            entity: switch.dining_window_light
+            name: Dining Window
+            show_state: true
+            icon: "mdi:lamp"
+            icon_height: 30px
         - type: horizontal-stack
           cards:
           - type: entity-button
@@ -282,7 +288,7 @@ views:
         - type: horizontal-stack
           cards:
           - type: entity-button
-            entity:  scene.garage_exterior
+            entity:  switch.garage_exterior
             name: Garage Exterior 60
             show_state: true
             icon: "mdi:wall-sconce"
@@ -368,25 +374,25 @@ views:
       - type: horizontal-stack
         cards:
         - type: entity-button
-          entity: scene.movie_time_on
+          entity: group.movie_time_lights_on
           name: Move Time On
           icon: 'mdi:television'
           icon_height: 45px
           tap_action:
             action: call-service
-            service: scene.turn_on
+            service: script.turn_on
             service_data:
-              entity_id: scene.movie_time_on
+              entity_id: script.movie_time_on
         - type: entity-button
-          entity: scene.movie_time_on
+          entity: group.movie_time_lights_off
           name: Move Time Off
           icon: 'mdi:television'
           icon_height: 45px
           tap_action:
             action: call-service
-            service: scene.turn_on
+            service: script.turn_on
             service_data:
-              entity_id: scene.movie_time_off
+              entity_id: script.movie_time_off
       - type: horizontal-stack
         cards:
         - type: entity-button
@@ -477,7 +483,9 @@ views:
 
 #Automations Card
 
-  - badges: []
+  - badges:
+      - entity: person.john
+      - entity: person.kim
     background: linear-gradient(rgba(0, 170, 255, .75), rgba(91, 88, 88, .75))
     cards:
       - entities:
@@ -511,6 +519,10 @@ views:
         - automation.garage_button
         - automation.master_bath_all_on
         - automation.master_check_motion
+        - automation.early_lights_on_p_m
+        - automation.john_wakeup_weekday
+        - automation.john_wakeup_weekend
+        - automation.arrive_home_breakfast_light
         show_header_toggle: false
         title: Test Automations
         type: entities
@@ -520,6 +532,12 @@ views:
         show_header_toggle: false
         title: Garage Lights
         type: entities
+      - entities:
+        - switch.john_tracker
+        show_header_toggle: false
+        title: Test Geolocation Change
+        icon: 'mdi:compass-outline'
+        type: entities        
     icon: "mdi:cogs"
     path: automations
     title: Automations
@@ -664,8 +682,8 @@ views:
       - type: vertical-stack
         cards:
           - entities:
-              - zwave.aeon_labs_zw100_multisensor_6_2
-              - sensor.aeon_labs_zw100_multisensor_6_burglar
+              - zwave.aeon_labs_zw100_multisensor_6
+              - binary_sensor.aeon_labs_zw100_multisensor_6_sensor
               - sensor.aeon_labs_zw100_multisensor_6_luminance
               - sensor.aeon_labs_zw100_multisensor_6_temperature
               - sensor.aeon_labs_zw100_multisensor_6_relative_humidity
@@ -674,27 +692,34 @@ views:
             show_header_toggle: false
             type: entities
           - entities:
-              - zwave.aeotec_limited_zwa005_trisensor
-              - binary_sensor.aeotec_limited_zwa005_trisensor_sensor    
+              - zwave.aeotec_limited_zwa005_trisensor_2
+              - binary_sensor.aeotec_limited_zwa005_trisensor_sensor_2    
               - sensor.aeotec_limited_zwa005_trisensor_luminance
               - sensor.aeotec_limited_zwa005_trisensor_temperature
             title: Master Bath Shower Sensors
             icon: "mdi:clipboard-pulse"
             show_header_toggle: false
             type: entities
+          - entities:
+              - zwave.aeotec_limited_unknown_type_0104_id_00bd
+            title: Aeotec Z Wave Range Extenders
+            icon: "mdi:clipboard-pulse"
+            show_header_toggle: false
+            type: entities            
       - type: vertical-stack
         cards:
           - entities:
               - zwave.aeotec_limited_zwa008_door_window_sensor_7
               - sensor.aeotec_limited_zwa008_door_window_sensor_7_access_control
+              - zwave.aeotec_limited_zwa008_door_window_sensor_7_2              
               - sensor.aeotec_limited_zwa008_door_window_sensor_7_access_control_2
             title: Door Sensors
             icon: "mdi:clipboard-pulse"
             show_header_toggle: false
             type: entities
           - entities:
-              - zwave.aeotec_limited_zwa005_trisensor_2
-              - binary_sensor.aeotec_limited_zwa005_trisensor_sensor_2    
+              - zwave.aeotec_limited_zwa005_trisensor
+              - binary_sensor.aeotec_limited_zwa005_trisensor_sensor   
               - sensor.aeotec_limited_zwa005_trisensor_luminance_2
               - sensor.aeotec_limited_zwa005_trisensor_temperature_2
             title: Downstairs Bathroom Sensors

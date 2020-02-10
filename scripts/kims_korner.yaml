@@ -1,0 +1,8 @@
+  kims_korner:
+    alias: Kims Korner
+    sequence:
+    - service: light.turn_on
+      data:
+        entity_id: group.kim_korner
+        brightness: 225
+        color_temp: 433 

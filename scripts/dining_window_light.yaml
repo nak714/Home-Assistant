@@ -1,0 +1,8 @@
+  dining_window_light:
+    alias: Dining Window Light
+    sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.dining_window
+        brightness: 144
+        color_temp: 447

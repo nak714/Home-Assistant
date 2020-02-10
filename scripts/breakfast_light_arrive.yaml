@@ -1,0 +1,15 @@
+  breakfast_light_arrive:
+    alias: Breakfast Light Arrive
+    sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.breakfast_chandelier
+    - service: timer.cancel
+      data:
+        entity_id: timer.breakfast_lights
+    - delay: 00:00:05
+    - service: timer.start
+      data:
+        entity_id: timer.breakfast_lights
+        duration: 00:10:00
+        

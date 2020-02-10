@@ -16,52 +16,52 @@
         state: on
         brightness_pct: 75
 
-  - name: Office
-    entities:
-      light.office_1:
-        state: on
-        brightness: 144
-        color_temp: 433
+#   - name: Office
+#     entities:
+#       light.office_1:
+#         state: on
+#         brightness: 144
+#         color_temp: 433
 
-  - name: Garage Exterior
-    entities:
-      light.exterior_garage:
-        state: on
-        brightness_pct: 38
+#   - name: Garage Exterior
+#     entities:
+#       light.exterior_garage:
+#         state: on
+#         brightness_pct: 38
 
-  - name: Movie Time On
-    entities:
-      group.man_cave: off
-      light.murano: off
-      group.upstairs: off
-      light.tv: 
-        state: on
+#   - name: Movie Time On
+#     entities:
+#       group.man_cave: off
+#       light.murano: off
+#       group.upstairs: off
+#       light.tv: 
+#         state: on
 
   - name: Movie Time Off
     entities:
       group.man_cave: on
       light.murano: on
 
-  - name: John
-    entities:
-      group.john:
-        state: on
-        brightness: 144
-        color_temp: 433
+#   - name: John
+#     entities:
+#       group.john:
+#         state: on
+#         brightness: 144
+#         color_temp: 433
 
-  - name: Kims Korner
-    entities:
-      group.kims_korner:
-        state: on
-        brightness: 225
-        color_temp: 433
+#   - name: Kims Korner
+#     entities:
+#       group.kims_korner:
+#         state: on
+#         brightness: 225
+#         color_temp: 433
 
-  - name: Man Cave
-    entities:
-      group.man_cave:
-        state: on
-        brightness: 144
-        color_temp: 433
+#   - name: Man Cave
+#     entities:
+#       group.man_cave:
+#         state: on
+#         brightness: 144
+#         color_temp: 433
 
   - name: Breakfast 25
     entities:
@@ -81,17 +81,17 @@
         state: on
         brightness_pct: 100
         
-  - name: Office Track 24
-    entities:
-      light.office_track:
-        state: on
-        brightness_pct: 24
+#   - name: Office Track 24
+#     entities:
+#       light.office_track:
+#         state: on
+#         brightness_pct: 24
         
-  - name: Master Bath Night
-    entities:
-      light.master_bath_tub_lights:
-        state: on
-        brightness_pct: 24
+#   - name: Master Bath Night
+#     entities:
+#       light.master_bath_tub_lights:
+#         state: on
+#         brightness_pct: 24
 
   - name: Downstairs Bathroom 25
     entities:

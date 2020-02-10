@@ -5,9 +5,8 @@
     offset: "00:30:00"
     platform: sun
   action:
-  - data:
-      entity_id: scene.garage_exterior
-    service: scene.turn_on
+  - entity_id: light.exterior_garage
+    service: script.garage_exterior_lights
 
 - id: garage_exterior_off
   alias: Garage Exterior Off
@@ -15,6 +14,5 @@
   - event: sunrise
     platform: sun
   action:
-  - data:
-      entity_id: light.exterior_garage
+  - entity_id: light.exterior_garage
     service: light.turn_off

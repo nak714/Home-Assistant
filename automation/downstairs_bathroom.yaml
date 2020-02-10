@@ -3,7 +3,7 @@
   trigger:
   - platform: state
     to: 'on'
-    entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor_2
+    entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor
   action:
   - entity_id: light.downstairs_bathroom_vanity_lights
     service: light.turn_on
@@ -15,7 +15,7 @@
   trigger:
   - platform: state
     to: 'off'
-    entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor_2
+    entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor
     for: 00:4:00
   action:
   - entity_id: light.downstairs_bathroom_vanity_lights

@@ -1,0 +1,7 @@
+  master_bath_night:
+    alias: Master Bath Night
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.master_bath_tub_lights
+          brightness_pct: 24

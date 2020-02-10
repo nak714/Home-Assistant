@@ -1,0 +1,14 @@
+  movie_time_off:
+    alias: Movie Time Off
+    sequence:
+    - service: script.turn_on
+      data:
+        entity_id: script.man_cave
+    - service: light.turn_on
+      data:
+        entity_id: light.murano
+        transition: 15
+        brightness_pct: 100
+    - service: script.turn_on
+      data:
+        entity_id: script.dining_window_light

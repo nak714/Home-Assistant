@@ -1,0 +1,70 @@
+- id: early_lights_on_pm
+  alias: Early Lights on p.m.
+  trigger:
+  - event: sunset
+    offset: -01:30:00
+    platform: sun
+  condition:
+  - condition: template
+    value_template: "{{ states('sensor.sky_condition') in ['cloudy', 'fog',
+      'hail', 'lightning', 'lightning-rainy', 'partlycloudy', 'pouring',
+      'rainy', 'snowy-rainy', 'snowy'] }}"    
+
+#   condition:
+#     condition: template
+#     value_template: >- 
+#           "{{ states('sensor.sky_condition') in ['cloudy', 'fog', 'hail', 'lightning', 
+#           'lightning-rainy', 'partlycloudy', 'pouring', 'rainy', 'snowy-rainy', 'snowy'] }}"						 
+ 
+#   condition: 
+#     condition: or
+#     conditions:
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'cloudy'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'fog'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'partlycloudy'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'pouring'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'rainy'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'snowy'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'snowy-rainy'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'lightning-rainy'
+  action:
+  - entity_id: group.east_lights
+    service: light.turn_on
+  - entity_id: group.kims_korner
+    service: script.kims_korner
+
+
+
+# # Conditions returned
+
+# ‘clear-night’
+# ‘cloudy’
+# ‘fog’
+# ‘hail’
+# ‘lightning’
+# ‘lightning-rainy’
+# ‘partlycloudy’
+# ‘pouring’
+# ‘rainy’
+# ‘snowy’
+# ‘snowy-rainy’
+# ‘sunny’
+# ‘windy’
+# ‘windy-variant’
+# ‘exceptional’

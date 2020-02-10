@@ -9,20 +9,20 @@
     after: sunset
     after_offset: "00:10:00"
   action:
-    service: homeassistant.turn_off
-    data:
-      entity_id: 
-        - light.family_2
-        - light.sink
-        - light.office_1
-        - light.office_track
-        - light.breakfast
-        - light.garage_interior
-        - switch.garage_interior
-        - switch.kitchen
-        - switch.upstairs
-        - switch.laundry
-        - switch.hallway
-        - switch.upper_hallway
-        - switch.basement_stairs
-        - switch.basement_work_area_main
+  - entity_id: 
+    - light.family_2
+    - light.sink
+    - light.office_1
+    - light.office_track
+    - light.breakfast
+    - light.garage_light
+    - light.murano
+    # - switch.garage_interior
+    - switch.kitchen
+    - switch.upstairs
+    - switch.laundry
+    - switch.hallway
+    - switch.upper_hallway
+    - switch.basement_stairs
+    - switch.basement_work_area_main
+    service: homeassistant.turn_off        

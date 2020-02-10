@@ -7,8 +7,8 @@
   action:
   - entity_id: 
     - light.office_1
-    - scene.office_track_24
-    service: homeassistant.turn_on
+    - light.office_track
+    service: script.office_lights
 
 - id: office_light_off
   alias: Office Light Off

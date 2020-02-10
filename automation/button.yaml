@@ -8,8 +8,7 @@
     event_type: zha_event
     platform: event
   action:
-  - data:
-      entity_id: light.garage_light
+  - entity_id: light.garage_light
     service: light.toggle
 
     

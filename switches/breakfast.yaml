@@ -11,22 +11,22 @@
         data:
           entity_id: light.breakfast_chandelier
     breakfast_50:
-      value_template: "{{ is_state('scene.breakfast_50','on') }}"
+      value_template: "{{ is_state('light.breakfast_chandelier','on') }}"
       turn_on:
-        service: homeassistant.turn_on
+        service: script.breakfast_50
         data:
-          entity_id: scene.breakfast_50
+          entity_id: light.breakfast_chandelier
       turn_off:
         service: homeassistant.turn_off
         data:
-          entity_id: scene.breakfast_50
+          entity_id: light.breakfast_chandelier
     breakfast_25:
-      value_template: "{{ is_state('scene.breakfast_25','on') }}"
+      value_template: "{{ is_state('light.breakfast_chandelier','on') }}"
       turn_on:
-        service: homeassistant.turn_on
+        service: script.breakfast_25
         data:
-          entity_id: scene.breakfast_25
+          entity_id: light.breakfast_chandelier
       turn_off:
         service: homeassistant.turn_off
         data:
-          entity_id: scene.breakfast_25          
+          entity_id: light.breakfast_chandelier          

@@ -1,0 +1,8 @@
+  office_desklamp:
+    alias: Office Desklamp
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.office_1
+          brightness: 144
+          color_temp: 433

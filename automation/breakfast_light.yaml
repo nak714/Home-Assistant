@@ -1,0 +1,25 @@
+- id: arrive_home_breakfast_light
+  alias: Arrive Home Breakfast Light
+  description: ''
+  trigger:
+  - entity_id: light.breakfast_chandelier
+    from: not_home
+    platform: state
+    to: home
+  action:
+    service_template: >
+      {% if is_state('sun.sun' , 'below_horizon') and is_state('light.breakfast_chandelier' , 'off') %} 
+      script.breakfast_light_arrive  
+      {% endif %}
+
+
+- id: breakfast_lights_off
+  alias: breakfast_lights_off
+  trigger:
+  - event_data:
+      entity_id: timer.breakfast_lights
+    event_type: timer.finished
+    platform: event
+  action:
+  - entity_id: light.breakfast_chandelier
+    service: light.turn_off      

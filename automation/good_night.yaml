@@ -4,10 +4,8 @@
   trigger:
   - at: "23:45:00"
     platform: time
-  condition: []
   action:
-  - data:
-      entity_id: group.john
+  - entity_id: group.john
     service: light.turn_off
     
 - id: good_night
@@ -16,8 +14,6 @@
   trigger:
   - at: "23:30:00"
     platform: time
-  condition: []
   action:
-  - data:
-      entity_id: all
+  - entity_id: all
     service: script.good_night

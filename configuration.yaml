@@ -110,6 +110,15 @@ zone:
     radius: 100
     icon: mdi:home
 
+mqtt:
+  broker: 10.0.1.252
+  port: 1883
+  username: !secret mqtt username
+  password: !secret mqtt password
+  discovery: true
+  discovery_prefix: homeassistant
+
+
 
 config:
 cloud:
@@ -257,12 +266,13 @@ person:
 
 #################################################
 #                                               #
-#                Nortek USB Setup               #
+#                Nortek/Aeotec USB Setup        #
 #                                               #
 #################################################
 
 zwave:
-    usb_path: /dev/ttyUSB0
+    usb_path: /dev/ttyACM0
+    debug: true
     network_key: "0x49, 0xc3, 0xd3, 0x05, 0x8d, 0x96, 0x06, 0x24, 0x5e, 0xe8, 0x46, 0x58, 0x54, 0x96, 0x4b, 0xa6"
 
 zha:

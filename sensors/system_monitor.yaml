@@ -8,3 +8,11 @@
       - type: packets_out
         arg:  eno1
       - type: processor_use
+      - type: throughput_network_in
+        arg: eno1
+      - type: throughput_network_out
+        arg: eno1
+      - type: network_in
+        arg: eno1
+      - type: network_out
+        arg: eno1

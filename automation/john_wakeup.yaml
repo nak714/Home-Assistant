@@ -1,0 +1,75 @@
+- id: john_wakeup_weekday
+  alias: John Wakeup Weekday
+  trigger:
+  - at: "05:15:00"
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    -  condition: time
+       weekday:
+       - mon
+       - tue
+       - wed
+       - thu
+       - fri
+    - condition: state
+      entity_id: device_tracker.johns_iphone
+      state: home
+  action:
+  - entity_id: group.john
+    service: script.wake_up_short
+
+
+- id: john_wakeup_off_weekday
+  alias: John Wakeup Off Weekday
+  trigger:
+  - at: "06:00:00"
+    platform: time
+  condition:
+  -  condition: time
+     weekday:
+     - mon
+     - tue
+     - wed
+     - thu
+     - fri
+  action:
+  - entity_id: group.john
+    service: light.turn_off    
+
+
+- id: john_wakeup_weekend
+  alias: John Wakeup Weekend
+  trigger:
+  - at: "06:00:00"
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    -  condition: time
+       weekday:
+       - sat
+       - sun
+    - condition: state
+      entity_id: device_tracker.johns_iphone
+      state: home       
+  action:
+  - entity_id: group.john
+    service: script.wake_up_long
+
+
+- id: john_wakeup_off_weekend
+  alias: John Wakeup Off Weekend
+  trigger:
+  - at: "07:00:00"
+    platform: time
+  condition:
+  -  condition: time
+     weekday:
+     - sat
+     - sun
+  action:
+  - entity_id: group.john
+    service: light.turn_off
+  

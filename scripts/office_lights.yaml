@@ -1,0 +1,12 @@
+  office_lights:
+    alias: Office Lights
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: light.office_track
+          brightness_pct: 24
+      - service: light.turn_on
+        data:
+          entity_id: light.office_1
+          brightness: 144
+          color_temp: 433

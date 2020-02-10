@@ -2,45 +2,58 @@
   alias: Extended Lights on a.m.
   trigger:
   - event: sunrise
-    offset: "00:30:05"
-    platform: sun      
-  condition: 
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: sensor.sky_condition
-      state: 'cloudy'
-    - condition: state
-      entity_id: sensor.sky_condition
-      state: 'fog'
-    - condition: state
-      entity_id: sensor.sky_condition
-      state: 'partlycloudy'
-    - condition: state
-      entity_id: sensor.sky_condition
-      state: 'pouring'
-    - condition: state
-      entity_id: sensor.sky_condition
-      state: 'rainy'
-    - condition: state
-      entity_id: sensor.sky_condition
-      state: 'snowy'
-    - condition: state
-      entity_id: sensor.sky_condition
-      state: 'snowy-rainy'
-    - condition: state
-      entity_id: sensor.sky_condition
-      state: 'lightning-rainy'
+    offset: "00:29:00"
+    platform: sun
+  condition:
+  - condition: template
+    value_template: "{{ states('sensor.sky_condition') in ['cloudy', 'fog',
+      'hail', 'lightning', 'lightning-rainy', 'partlycloudy', 'pouring',
+      'rainy', 'snowy-rainy', 'snowy'] }}"
+
+#   condition:
+#     condition: template
+#     value_template: >- 
+#           "{{ states('sensor.sky_condition') in ['cloudy', 'fog', 'hail', 'lightning', 
+#           'lightning-rainy', 'partlycloudy', 'pouring', 'rainy', 'snowy-rainy', 'snowy'] }}"
+          
+# Clean up after testing
+#   condition: 
+#     condition: or
+#     conditions:
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'cloudy'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'fog'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'partlycloudy'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'pouring'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'rainy'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'snowy'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'snowy-rainy'
+#     - condition: state
+#       entity_id: sensor.sky_condition
+#       state: 'lightning-rainy'
   action:
   - data:
-      entity_id: group.downstairs
-    service: light.turn_on
+      entity_id: automation.good_morning_lights_off
+    service: automation.turn_off
   - data:
       entity_id: timer.cloudy_lights
     service: timer.cancel
   - delay: 00:00:05
   - data:
-      duration: 01:00:00
+      duration: 01:05:00
       entity_id: timer.cloudy_lights
     service: timer.start
 - id: extended_lights_off_am
@@ -53,6 +66,8 @@
   action:
   - entity_id: group.downstairs
     service: light.turn_off
+  - entity_id: automation.good_morning_lights_off
+    service: automation.turn_on
 
 
 

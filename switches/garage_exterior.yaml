@@ -3,7 +3,7 @@
     garage_exterior:
       value_template: "{{ is_state('light.exterior_garage','on') }}"
       turn_on:
-        service: homeassistant.turn_on
+        service: script.garage_exterior_lights
         data:
           entity_id: light.exterior_garage
       turn_off:

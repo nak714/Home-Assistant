@@ -21,7 +21,8 @@
     - group.hallway
     - group.kims_korner
     - switch.garage_interior
-    - switch.breakfast
+    - group.john
+    - light.murano
     # - light.family_2
     service: homeassistant.turn_on
   - entity_id: light.family_2
@@ -44,8 +45,45 @@
       duration: 00:10:00
       entity_id: timer.garage_breakfast_lights
     service: timer.start
+
+# - id: arrive_home_breakfast_light
+#   alias: Arrive Home Breakfast Light
+#   description: ''
+#   trigger:
+#   - entity_id: light.breakfast_chandelier
+#     from: not_home
+#     platform: state
+#     to: home
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: sun
+#         after: sunset
+#       - condition: state
+#         entity_id: light.breakfast_chandelier
+#         state: 'off'
+#   condition:
+#   - after: sunset
+#     condition: sun
+#   - condition: and
+#     conditions:
+#     - condition: state
+#       entity_id: light.breakfast_chandelier
+#       state: 'off'
+
+#   action:
+#   - entity_id: light.breakfast_chandelier
+#     service: light.turn_on
+#   - data:
+#       entity_id: timer.breakfast_lights
+#     service: timer.cancel
+#   - delay: 00:00:05
+#   - data:
+#       duration: 00:10:00
+#       entity_id: timer.breakfast_lights
+#     service: timer.start
     
-    
+
 - id: hallway_lights_off
   alias: hallway_lights_off
   trigger:
@@ -66,8 +104,19 @@
     event_type: timer.finished
     platform: event
   action:
-  - data:
-      entity_id:
-      - switch.garage_interior
-      - switch.breakfast
+  - entity_id:
+    - switch.garage_interior
+    - switch.breakfast
     service: homeassistant.turn_off
+    
+# - id: breakfast_lights_off
+#   alias: breakfast_lights_off
+#   trigger:
+#   - event_data:
+#       entity_id: timer.breakfast_lights
+#     event_type: timer.finished
+#     platform: event
+#   action:
+#   - entity_id:
+#     - switch.breakfast
+#     service: homeassistant.turn_off    

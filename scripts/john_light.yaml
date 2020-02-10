@@ -1,0 +1,8 @@
+  john:
+    alias: John
+    sequence:
+    - service: light.turn_on
+      data:
+        entity_id: group.john
+        brightness: 144
+        color_temp: 433        

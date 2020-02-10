@@ -1,0 +1,7 @@
+  breakfast_50:
+    alias: Breakfast 50%  
+    sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.breakfast_chandelier
+        brightness_pct: 50

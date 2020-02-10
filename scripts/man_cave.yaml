@@ -1,0 +1,8 @@
+  man_cave:
+    alias: Man Cave
+    sequence:
+    - service: light.turn_on
+      data:
+        entity_id: group.man_cave
+        brightness: 144
+        color_temp: 433

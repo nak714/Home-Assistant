@@ -1,0 +1,7 @@
+  garage_exterior_lights:
+    alias: Garage Exterior Lights
+    sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.exterior_garage
+        brightness_pct: 38

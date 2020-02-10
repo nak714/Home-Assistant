@@ -12,3 +12,4 @@
 #   - data: {}
 #     entity_id: group.kitchen
 #     service: light.turn_on
+

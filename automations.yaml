@@ -1,16 +1,14 @@
-- id: '1579184851262'
+- id: '1581351833841'
   alias: New Automation
   description: ''
   trigger:
-  - below: '2'
-    entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
-    for: 00:02:30
-    platform: numeric_state
-  - entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor
-    for: 00:02:30
-    platform: state
-    to: 'off'
-  condition: []
+  - event: sunset
+    offset: 01:30:00
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: device_tracker.johns_iphone
+    state: home
   action:
-  - entity_id: light.sink
-    service: light.turn_off
+  - entity_id: light.john_1
+    service: light.turn_on

@@ -1,19 +1,18 @@
 - id: master_bath_all_on
   alias: master_bath_all_on
   trigger:
-  - above: '2'
-    below: '9'
-    entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
-    platform: numeric_state
   - platform: state
     to: 'on'
-    entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor
+    entity_id: binary_sensor.aeon_labs_zw100_multisensor_6_sensor
+  - platform: state
+    to: 'on'
+    entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor_2
   condition:
     condition: and
     conditions:
       - condition: numeric_state
         entity_id: sensor.aeon_labs_zw100_multisensor_6_luminance
-        below: '100'
+        below: '60'
       - condition: time
         after: '05:30:00'
         before: '23:59:59'
@@ -26,42 +25,42 @@
 - id: master_bath_after_midnight
   alias: master_bath_after_midnight
   trigger:
-  - above: '2'
-    below: '9'
-    entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
-    platform: numeric_state
   - platform: state
     to: 'on'
-    entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor
+    entity_id: binary_sensor.aeon_labs_zw100_multisensor_6_sensor
+  - platform: state
+    to: 'on'
+    entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor_2
   condition:
     condition: time
     after: '00:00:00'
     before: '05:29:59'
   action:
-  - entity_id: scene.master_bath_night
-    service: scene.turn_on
+  - entity_id: light.master_bath_tub_lights
+    service: script.master_bath_night
     
 
 - id: master_check_motion
   alias: Master Check Motion
   trigger:
-  - platform: numeric_state
-    entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
-    below: '2'
+  - platform: state
+    entity_id: binary_sensor.aeon_labs_zw100_multisensor_6_sensor
+    to: 'off'
     for: 00:02:30
   - platform: state
     to: 'off'
-    entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor
+    entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor_2
     for: 00:02:30
   condition:
     condition: and
     conditions:
-      - condition: numeric_state
-        entity_id: sensor.aeon_labs_zw100_multisensor_6_burglar
-        below: '3'
       - condition: state
+        entity_id: binary_sensor.aeon_labs_zw100_multisensor_6_sensor
         state: 'off'
-        entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor
+      - condition: state
+        entity_id: binary_sensor.aeotec_limited_zwa005_trisensor_sensor_2
+        state: 'off'
+        
   action:
     - service: homeassistant.turn_off
       entity_id:

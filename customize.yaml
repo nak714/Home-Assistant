@@ -19,7 +19,14 @@ device_tracker.johns_iphone:
 device_tracker.kim_iphone:
   entity_picture: /local/pics/people/kim.jpg  
 
-  
+
+switch.john_tracker:
+  editable: false
+  friendly_name: John Tracker
+  icon: mdi:compass-outline  
+
+
+
         ########################################################
         #                                                      #
         #                        Sensors                       #
@@ -33,69 +40,114 @@ binary_sensor.philips_sml001_96c4b704_occupancy:
   device_class: motion
   sensativity: 1
   sensativity_max: 2
+  
+zwave.aeotec_limited_unknown_type_0104_id_00bd:
+  editable: false
+  friendly_name: Aeotec Range Extender 7
+
 sensor.philips_sml001_96c4b704_temperature:
   editable: true
   friendly_name: Laundry Temprature Sensor
-sensor.aeon_labs_zw100_multisensor_6_burglar:
+  
+zwave.aeon_labs_zw100_multisensor_6:
+  editable: false
+  friendly_name: Aeotec MultiSensor 6 Master Bath
+
+binary_sensor.aeon_labs_zw100_multisensor_6_sensor:
   editable: true
   friendly_name: Motion Sensor
   icon: mdi:motion-sensor
+
 sensor.aeon_labs_zw100_multisensor_6_luminance:
   editable: true
   friendly_name: Luminance Sensor
   icon: mdi:weather-sunny
+
 sensor.aeon_labs_zw100_multisensor_6_relative_humidity:
   editable: true
   friendly_name: Relative Humidity Sensor
   icon: mdi:water-percent
-sensor.aeotec_limited_zwa005_trisensor_burglar:
-  editable: true
+
+binary_sensor.aeotec_limited_zwa005_trisensor_sensor_2:
+  editable: false
   friendly_name: Shower Motion Sensor
   icon: mdi:motion-sensor
+
 sensor.aeotec_limited_zwa005_trisensor_luminance:
-  editable: true
+  editable: false
   friendly_name: Shower Luminance Sensor
   icon: mdi:weather-sunny
+
 sensor.aeotec_limited_zwa005_trisensor_temperature:
-  editable: true
+  editable: false
   friendly_name: Shower Temperature Sensor
   icon: mdi:thermometer
-zwave.aeon_labs_zw100_multisensor_6_2:
-  friendly_name: Aeotec MultiSensor 6
+
 zwave.aeotec_limited_zwa005_trisensor:
-  friendly_name: Aeotec TriSensor
+  editable: false
+  friendly_name: Aeotec TriSensor Downstairs Bathroom
+
 zwave.aeotec_limited_zwa008_door_window_sensor_7:
   editable: true
-  friendly_name: Aeotec Door/Window Sensor
+  friendly_name: Aeotec Door/Window Sensor Slider
+
 sensor.aeotec_limited_zwa008_door_window_sensor_7_access_control:
   editable: true
-  friendly_name: Interior Garage Door Sensor
+  friendly_name: Kitchen Slider
   icon: mdi:door
+
+zwave.aeotec_limited_zwa008_door_window_sensor_7_2:
+  edutable: false
+  friendly_name: Aeotec Door/Window Front Door
+
+sensor.aeotec_limited_zwa008_door_window_sensor_7_access_control_2:
+  editable: false
+  friendly_name: Front Door
+  icon: mdi:door
+
 zwave.aeotec_limited_zwa005_trisensor_2:
-  friendly_name: Aeotec TriSensor  
+  editable: false
+  friendly_name: Aeotec TriSensor Master Shower 
+
 sensor.aeotec_limited_zwa005_trisensor_burglar_2:
   editable: true
   friendly_name: Shower Motion Sensor
   icon: mdi:motion-sensor
+
+binary_sensor.aeotec_limited_zwa005_trisensor_sensor:
+  editable: false
+  friendly_name: Downstairs Bathroom Motion
+  icon: mdi:motion-sensor
+
 sensor.aeotec_limited_zwa005_trisensor_luminance_2:
-  editable: true
+  editable: false
   friendly_name: Downstairs Bathroom Luminance Sensor
   icon: mdi:weather-sunny
+
 sensor.aeotec_limited_zwa005_trisensor_temperature_2:
-  editable: true
+  editable: false
   friendly_name: Downstairs Bathroom Temprature Sensor
   icon: mdi:thermometer
   
 binary_sensor.philips_sml001_4c3ff606_occupancy:
   friendly_name: Office Philips Motion
+  device_class: motion
+  sensativity: 1
+  sensativity_max: 2  
+#   icon: motion-sensor
+
 sensor.philips_sml001_4c3ff606_illuminance:
   friendly_name: Office Philips Light
+
 sensor.philips_sml001_4c3ff606_temperature:
   friendly_name: Office Philips Temprature
+
 sensor.philips_sml001_4c3ff606_power:
   friendly_name: Office Philips Battery
+
 binary_sensor.office_occupancy:
   friendly_name: Office Ecobee Motion
+
 sensor.office_temperature:
   friendly_name: Office Ecobee Temperature 
   
